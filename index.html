@@ -477,6 +477,8 @@ dialog ul{padding-left:20px}
   #cvContent .cx .cxJob{padding-bottom:6px}#cvContent .cx .cxJob h4{font-size:13.8px}#cvContent .cx .cxJob li{font-size:10.8px!important}
   #cvContent .cx .cxStats b{font-size:24px}#cvContent .cx .cxHr{margin-top:9px}
   #cvContent .cx .cxContact li{font-size:11px!important}#cvContent .cx .cxTag{margin-top:13px}#cvContent .cx .cxHr{margin-top:8px}#cvContent .cx .cxContact li{word-break:normal;font-size:10.4px!important}.cxContact{grid-template-columns:1fr 100px}
+  #cvContent .cx{background:#07090a url(assets/cv-bg.jpg) center/100% 100% no-repeat!important}#cvContent .cx:before{display:none!important}
+  #cvContent *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;filter:none!important;box-shadow:none!important;text-shadow:none!important}
   @page{size:A4;margin:0}
 }
 @media(min-width:1001px){.g.five{grid-template-columns:repeat(10,1fr)}.g.five .fig{grid-column:span 2}}
@@ -981,7 +983,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,figcaption,.fact strong,.job p{text-wrap:pret
 <dialog id="cvDialog" aria-labelledby="cvTitle" data-lenis-prevent><div class="dHead"><p class="label">Hồ sơ ứng tuyển</p><button class="close" type="button" aria-label="Đóng CV">×</button></div>
 <div id="cvContent"><div class="cvSheet cx">
   <div class="cxL">
-    <div class="cxPhoto"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><img src="assets/profile-ly-huynh-long.webp" alt="Lý Huỳnh Long" width="1000" height="1249" loading="lazy"></div>
+    <div class="cxPhoto"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><img src="assets/profile-cv.webp" alt="Lý Huỳnh Long" width="640" height="800" loading="lazy"></div>
     <p class="cxHello">Xin chào, tôi là</p>
     <h2 id="cvTitle" class="cxName">Lý Huỳnh<br>Long<em>.</em></h2>
     <p class="cxRole">Graphic Designer · Employer Branding &amp; Event Design</p>
@@ -1018,7 +1020,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,figcaption,.fact strong,.job p{text-wrap:pret
     <div class="cxTools"><span><b>Ps</b>Photoshop</span><span><b>Ai</b>Illustrator</span><span><b>Pr</b>Premiere</span><span><b>Ae</b>After Effects</span><span class="ai">ChatGPT · Codex</span><span class="ai">Claude</span><span class="ai">Google AI Studio</span></div>
   </div>
 </div></div>
-<div class="cvActions"><button class="btn pri" id="printCV" type="button">In / Lưu CV thành PDF <span class="arr">↗</span></button></div></dialog>
+<div class="cvActions"><a class="btn pri" id="printCV" href="assets/Ly-Huynh-Long-CV.pdf" download="Ly-Huynh-Long-CV.pdf">Tải CV (PDF) <span class="arr">↓</span></a></div></dialog>
 
 <!-- Lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn" aria-hidden="true">
@@ -1223,7 +1225,7 @@ $$('[data-project]').forEach(function(b){b.addEventListener('click',function(){
 })});
 var cv=$('#cvDialog');
 ['openCV','openCV2'].forEach(function(id){document.getElementById(id).addEventListener('click',function(){cv.showModal()})});
-$('#printCV').addEventListener('click',function(){window.print()});
+
 $$('dialog').forEach(function(d){
   d.addEventListener('close',function(){if(!lbOpen)lockScroll(false)});
   d.addEventListener('cancel',function(){});
