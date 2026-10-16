@@ -128,6 +128,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 .strip{overflow:hidden;margin-top:clamp(14px,1.8vw,24px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .strip .track{display:flex;gap:clamp(10px,1.2vw,16px);width:max-content;animation:mq 46s linear infinite}
 .strip:hover .track{animation-play-state:paused}
+.emails{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,18px);margin-top:clamp(14px,1.8vw,24px)}.ecard{aspect-ratio:4/5}.ecard img{object-position:top center}
+@media(max-width:640px){.emails{grid-template-columns:minmax(0,1fr)}}
 .strip .tile{flex:none;width:clamp(150px,17vw,230px);aspect-ratio:1}.strip.var .tile{width:auto;aspect-ratio:auto;height:clamp(160px,17vw,230px)}.strip.var .tile img{width:auto;height:100%}.strip.var .track{animation-duration:70s}.strip .tile .cap{display:none}
 @media(prefers-reduced-motion:reduce){.strip{overflow-x:auto}.strip .track{width:auto}.strip .dup{display:none}}
 
@@ -165,6 +167,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 .pBot .k{font:500 10.5px/1 var(--mono);letter-spacing:.18em;color:var(--acc);display:block;margin-bottom:12px;text-transform:uppercase}
 .pBot h3{margin:0;font-size:clamp(24px,3.1vw,46px);line-height:1.04;letter-spacing:-.045em;font-weight:600;max-width:15em}
 .project.lg .pBot h3{font-size:clamp(28px,4.2vw,64px)}
+.project.s2 .pBot h3{font-size:clamp(20px,2vw,30px)}.project.s2 .pBot p{font-size:12px}.project.s2 .pTop small{font-size:9px;letter-spacing:.1em}
 .pBot p{margin:12px 0 0;font-size:13px;color:rgba(255,255,255,.72);max-width:520px}
 .pCard.text{background:radial-gradient(ellipse at 100% 100%,color-mix(in srgb,var(--acc) 15%,transparent),transparent 60%),var(--card);color:var(--ink)}
 .pCard.text.t2{background:radial-gradient(ellipse at 0% 100%,rgba(255,170,60,.16),transparent 60%),var(--card)}
@@ -191,6 +194,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 .case.teal{--c-bg:#05110f;--c-card:#0c1f1b;--c-ink:#eef8f4;--c-mut:#9bb8ae;--c-line:rgba(110,235,190,.17);--c-acc:#5fe3b0;--c-pill:#5fe3b0;--c-pillInk:#04170f}
 .case.gold{--c-bg:#0a0806;--c-card:#15110b;--c-ink:#f6efdc;--c-mut:#b8ac8c;--c-line:rgba(242,214,120,.16);--c-acc:#f2d678;--c-pill:#f2d678;--c-pillInk:#17110a}
 .case .label{color:var(--c-acc)}
+.edition{display:none}.edition.on{display:block}
+.edIntro{max-width:760px;margin:0 0 clamp(34px,4vw,56px)}.edIntro p:not(.label){color:var(--c-mut);font-size:15px;line-height:1.85;margin:10px 0 22px}
+.edTabs{display:flex;gap:10px;flex-wrap:wrap}.edTabs button{padding:12px 20px;border-radius:999px;border:1px solid var(--c-line);color:var(--c-ink);font-weight:600;font-size:14px;transition:all .3s var(--ease)}.edTabs button span{font-weight:400;opacity:.7;margin-left:6px}.edTabs button:hover{border-color:var(--c-acc)}.edTabs button[aria-selected=true]{background:var(--c-pill);border-color:var(--c-pill);color:var(--c-pillInk)}.edTabs button[aria-selected=true] span{opacity:.8}
+.other{--c-line:var(--line);--c-card:color-mix(in srgb,var(--ink) 6%,var(--bg));--c-pill:var(--acc);--c-pillInk:var(--accInk)}
+.oBlock{padding:clamp(26px,3.4vw,44px) 0;border-bottom:1px solid var(--line)}.oBlock:last-child{border-bottom:0}.oHead{display:grid;grid-template-columns:1fr 1.2fr;gap:8px clamp(20px,5vw,70px);align-items:baseline}.oHead .k{grid-column:1/-1;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}.oHead h3{margin:0;font-size:clamp(24px,2.6vw,38px);letter-spacing:-.04em;font-weight:600}.oHead p{margin:0;color:var(--mut);font-size:15px;line-height:1.75}
+@media(max-width:700px){.oHead{grid-template-columns:1fr}}
+.pGroup span a{border-bottom:1px solid currentColor}
 .cHead{display:grid;grid-template-columns:1.5fr .7fr;gap:clamp(24px,6vw,90px);align-items:end;margin-bottom:clamp(30px,4vw,52px)}
 .cHead h2{font-size:clamp(38px,4.9vw,78px);line-height:.98;letter-spacing:-.055em;font-weight:600;margin:0}
 .cHead h2 span{display:block;color:var(--c-acc);font-weight:400;font-style:italic}
@@ -201,6 +211,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 .heroCard.full img{aspect-ratio:auto;height:auto;object-fit:contain}
 .cap{position:absolute;left:16px;bottom:16px;z-index:2;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:9px 13px;border-radius:999px;background:rgba(5,8,6,.72);color:#e9efe6;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none;transition:opacity .4s,transform .5s var(--ease)}
 .cap2{position:absolute;right:16px;bottom:16px;z-index:2;font:500 10px/1 var(--mono);letter-spacing:.14em;color:var(--c-pillInk);background:var(--c-pill);padding:9px 13px;border-radius:999px;pointer-events:none}
+.facts.facts.kpis .fact{display:flex;flex-direction:column-reverse;gap:8px;padding:20px 24px}.facts.kpis .fact strong{font-size:clamp(30px,3.6vw,48px);line-height:1;letter-spacing:-.05em;font-weight:600;color:var(--c-acc)}.facts.kpis .fact span{font-size:12px;letter-spacing:.04em;text-transform:none;font-family:var(--font);color:var(--c-mut)}
+.kpiNote{margin:12px 4px 0;font-size:12px;line-height:1.7;color:var(--c-mut);max-width:820px}
+@media(max-width:760px){.facts.kpis{--cols:2!important}}
+.brief .fact strong{font-weight:400;font-size:14px;line-height:1.75;color:var(--c-ink)}
 .facts{display:grid;grid-template-columns:repeat(var(--cols,3),1fr);border:1px solid var(--c-line);border-radius:22px;overflow:hidden;margin-top:18px;background:var(--c-card)}
 .fact{padding:22px 26px;border-right:1px solid var(--c-line);border-bottom:1px solid var(--c-line);margin:0 -1px -1px 0}
 .fact span{display:block;font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--c-mut);margin-bottom:10px}
@@ -214,6 +228,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 .pHead .label{margin:0 0 12px}
 .pHead h3{font-size:clamp(24px,3.2vw,46px);line-height:1.08;letter-spacing:-.04em;font-weight:600;margin:0 0 12px}
 .pHead p{color:var(--c-mut);font-size:14.5px;margin:0;max-width:640px;line-height:1.8}
+.pMeta{display:grid;grid-template-columns:repeat(3,1fr);margin:22px 0 0;max-width:860px;border:1px solid var(--c-line);border-radius:18px;overflow:hidden;background:var(--c-card)}
+.pMeta div{padding:16px 18px;border-left:1px solid var(--c-line)}.pMeta div:first-child{border-left:0}
+.pMeta dt{font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--c-mut);margin:0 0 10px}
+.pMeta dd{margin:0;font-size:13.5px;font-weight:500;line-height:1.6}
 .g{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(10px,1.4vw,18px)}
 .fig{margin:0;position:relative;overflow:hidden;border-radius:clamp(14px,1.6vw,22px);border:1px solid var(--c-line);background:var(--c-card);cursor:zoom-in;min-width:0}
 .fig img{display:block;width:100%;height:100%;object-fit:cover}
@@ -248,8 +266,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 .lcard figcaption strong{display:block;color:var(--c-ink);font-size:14px;margin-bottom:4px}
 
 /* ───────── About ───────── */
-.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,7vw,110px);align-items:start}
-.about h2{font-size:clamp(38px,5.4vw,82px);line-height:1.02;letter-spacing:-.05em;font-weight:600;margin:0 0 40px}
+.about{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:clamp(30px,6vw,90px);row-gap:0;align-items:start}
+.aboutHead{grid-column:1/-1}
+.about h2{overflow-wrap:anywhere;font-size:clamp(29px,5.4vw,82px);line-height:1.02;letter-spacing:-.05em;font-weight:600;margin:0 0 clamp(32px,4vw,52px)}
 .about h2 em{font-style:italic;font-weight:400;color:var(--mut)}
 .skills{display:grid;gap:12px}
 .skill{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:var(--card);transition:transform .5s var(--ease),border-color .3s}
@@ -307,12 +326,81 @@ dialog ul{padding-left:20px}
 #cvContent .job{grid-template-columns:1fr;gap:6px;padding:16px 0;margin:0;border-radius:0}
 #cvContent .job:before{display:none}
 #cvContent .job time{padding:0}
+#cvDialog{width:min(980px,calc(100% - 24px));background:#07090a;color:#f4f7f1;padding:clamp(14px,2.4vw,26px);border-color:rgba(200,255,63,.18)}
+#cvDialog .dHead{margin-bottom:12px}
+.cvSheet{--cl:#c8ff3f;--ci:#0a1203;--cm:#9aa59a;--cx:rgba(255,255,255,.1);position:relative;overflow:hidden;isolation:isolate;border-radius:20px;background:#07090a;border:1px solid var(--cx);padding:clamp(22px,4vw,44px);color:#f4f7f1;line-height:1.6}
+.cvSheet:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 96% 0%,rgba(200,255,63,.17),transparent 38%),radial-gradient(circle at 0% 100%,rgba(200,255,63,.07),transparent 34%)}
+.cvSheet *{overflow-wrap:anywhere}
+.cvSheet p,.cvSheet li{color:#c9d2c9;font-size:13px;line-height:1.7;margin:0}
+.cvSheet h2,.cvSheet h3,.cvSheet h4{margin:0}
+.cvHero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding-bottom:clamp(18px,3vw,28px);border-bottom:1px solid var(--cx)}
+.cvKicker{display:flex;gap:10px;align-items:center;font:500 10.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--cl);margin-bottom:14px}.cvKicker:before{content:'';width:26px;height:1px;background:var(--cl)}
+#cvContent .cvHero h2{font-size:clamp(40px,6vw,64px);line-height:.95;letter-spacing:-.06em;font-weight:700;margin:0 0 12px}#cvContent .cvHero h2 em{font-style:normal;color:var(--cl)}
+.cvRole{font-weight:600;font-size:15px;color:#f4f7f1;margin:0 0 4px!important}.cvTag{font-family:var(--mono);font-size:12px!important;color:var(--cm)!important;letter-spacing:.04em}.cvTag b{color:var(--cl);font-weight:500}
+.cvPortrait{position:relative;width:clamp(120px,17vw,170px);aspect-ratio:1;flex:none}.cvPortrait:before{content:'';position:absolute;inset:6% 0 0 6%;border-radius:50%;background:var(--cl)}.cvPortrait:after{content:'';position:absolute;inset:-5%;border-radius:50%;border:1px solid rgba(200,255,63,.4)}
+.cvPortrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 14%;border-radius:50%;z-index:1;-webkit-mask:linear-gradient(#000 78%,transparent 100%);mask:linear-gradient(#000 78%,transparent 100%)}
+.cvStats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(16px,2.6vw,24px);border:1px solid var(--cx);border-radius:16px;overflow:hidden;background:rgba(200,255,63,.06)}.cvStats div{padding:12px 16px;border-left:1px solid var(--cx)}.cvStats div:first-child{border-left:0}.cvStats b{display:block;font:700 clamp(26px,4vw,38px)/1 var(--font);letter-spacing:-.03em;color:var(--cl)}.cvStats span{display:block;margin-top:6px;font-size:12px;color:var(--cm)}.cvStats p{grid-column:1/-1;margin:0;padding:7px 16px;border-top:1px solid var(--cx);font:500 9.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cm)}
+.cvGrid{display:grid;grid-template-columns:1.75fr 1fr;gap:clamp(22px,3.4vw,38px);margin-top:clamp(18px,3vw,28px)}
+.cvSec+.cvSec{margin-top:clamp(18px,2.6vw,24px)}
+.cvSec h3{display:flex;align-items:center;gap:10px;font:600 10.5px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--cl);margin-bottom:12px}.cvSec h3:after{content:'';flex:1;height:1px;background:var(--cx)}
+.cvJob{position:relative;padding:0 0 16px 20px;border-left:1px solid var(--cx);margin-left:4px}.cvJob:last-child{padding-bottom:0;border-left-color:transparent}
+.cvJob:before{content:'';position:absolute;left:-4.5px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--cl);box-shadow:0 0 0 3px rgba(200,255,63,.18)}
+.cvWhen{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cl);margin:0 0 6px}
+#cvContent .cvJob h4{font-size:14.5px;font-weight:600;letter-spacing:-.02em;line-height:1.35;color:#fff}#cvContent .cvJob h4 span{display:block;font-weight:400;font-size:12px;color:var(--cm);letter-spacing:0;margin-top:1px}
+.cvJob ul{margin:7px 0 0;padding:0;list-style:none;display:grid;gap:3px}.cvJob li{position:relative;padding-left:13px;font-size:12.3px}.cvJob li:before{content:'';position:absolute;left:0;top:.72em;width:5px;height:1px;background:var(--cl)}
+.cvHeroR{display:flex;align-items:center;gap:16px}.cvQR{display:none;text-align:center}.qrSlot{width:78px;height:78px;margin:0 auto;border:1.5px dashed rgba(255,255,255,.4);border-radius:10px;display:grid;place-items:center;font:500 11px/1 var(--mono);letter-spacing:.18em;color:rgba(255,255,255,.55);overflow:hidden;background:rgba(255,255,255,.05)}.qrSlot img{width:100%;height:100%;display:block;object-fit:contain;background:#fff}.cvQR small{display:block;margin-top:6px;font:500 8.5px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.cvBox{border:1px solid var(--cx);background:rgba(255,255,255,.03);border-radius:14px;padding:13px 15px}
+.cvContact{display:grid;gap:8px}.cvContact div{display:grid;gap:1px}.cvContact small{font:500 9.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--cm)}.cvContact span{font-size:12.5px;color:#f4f7f1;word-break:break-word}
+.cvProj{display:grid;gap:11px;padding:0;margin:0;list-style:none}.cvProj li{padding-left:12px;border-left:2px solid var(--cl)}.cvProj strong{display:block;color:#fff;font-size:12.6px;font-weight:600;letter-spacing:-.01em;line-height:1.35}.cvProj li{font-size:11.6px;line-height:1.55}
+.cvList{display:grid;gap:6px;padding:0;margin:0;list-style:none}.cvList li{position:relative;padding-left:13px;font-size:12px}.cvList li:before{content:'';position:absolute;left:0;top:.72em;width:5px;height:1px;background:var(--cl)}
+.cvChips{display:flex;flex-wrap:wrap;gap:6px}.cvChips span{font:500 10px/1 var(--mono);letter-spacing:.06em;padding:7px 10px;border-radius:999px;border:1px solid rgba(200,255,63,.35);color:var(--cl)}.cvChips span.ai{background:var(--cl);border-color:var(--cl);color:var(--ci);font-weight:600}
+.cvSheet .cvEdu strong{display:block;color:#fff;font-size:12.6px;font-weight:600;line-height:1.4}.cvSheet .cvEdu span{font-size:11.6px;color:var(--cm)}
+/* glass */
+.cvSheet:before{background:radial-gradient(circle at 92% 2%,rgba(200,255,63,.30),transparent 34%),radial-gradient(circle at 4% 38%,rgba(88,201,242,.20),transparent 36%),radial-gradient(circle at 86% 92%,rgba(200,255,63,.16),transparent 38%),radial-gradient(circle at 20% 100%,rgba(120,110,255,.16),transparent 34%)}
+.cvJob,.cvProj li,.cvBox,.cvSec>p,.cvList,.cvEdu{background:linear-gradient(150deg,rgba(255,255,255,.10),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.15);border-radius:16px;-webkit-backdrop-filter:blur(18px) saturate(1.35);backdrop-filter:blur(18px) saturate(1.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 18px 36px -24px rgba(0,0,0,.7)}
+.cvSec>p{padding:13px 16px}.cvList{padding:12px 15px}.cvEdu{padding:12px 15px}
+.cvJob{margin:0 0 10px;padding:13px 16px;border-left:1px solid rgba(255,255,255,.15)!important}.cvJob:last-child{margin-bottom:0}.cvJob:before{display:none}
+.cvWhen{display:flex;align-items:center;gap:8px}.cvWhen:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--cl);box-shadow:0 0 0 3px rgba(200,255,63,.2),0 0 12px rgba(200,255,63,.7)}
+.cvProj{gap:9px}.cvProj li{padding:10px 13px;border-left:1px solid rgba(255,255,255,.15)}
+.cvChips span{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);color:#e8f5c8;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}.cvChips span.ai{background:rgba(200,255,63,.9);color:var(--ci)}
+.cvPortrait:before{box-shadow:0 0 50px rgba(200,255,63,.5)}
+.cvSheet{border-color:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.cvJob li{font-size:12px}
+
+.cx{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(22px,4vw,40px);align-items:start;font-family:var(--font)}
+.cx p,.cx li{font-size:12.5px;line-height:1.55;color:#d9e0d4}
+.cxPhoto{position:relative;aspect-ratio:4/4.4;overflow:hidden;border:1px solid rgba(200,255,63,.35);background:radial-gradient(circle at 50% 58%,rgba(200,255,63,.95) 0 42%,rgba(200,255,63,0) 43%),linear-gradient(160deg,#10150b,#050706)}
+.cxPhoto img{position:absolute;left:50%;bottom:0;height:100%;width:auto;max-width:none;transform:translateX(-50%);object-fit:contain}
+.cxPhoto i{position:absolute;width:9px;height:9px;background:var(--cl);z-index:2}.cxPhoto .c1{left:-1px;top:-1px}.cxPhoto .c2{right:-1px;top:-1px}.cxPhoto .c3{left:-1px;bottom:-1px}.cxPhoto .c4{right:-1px;bottom:-1px}
+.cxHello{margin:18px 0 0!important;font:400 17px/1.2 var(--font)!important;color:#fff!important}
+.cxName{margin:2px 0 6px;font:700 clamp(40px,6vw,58px)/.95 var(--font);letter-spacing:-.05em;color:#fff}.cxName em{font-style:normal;color:var(--cl)}
+.cxRole{margin:8px 0 4px!important;font-weight:600!important;color:#fff!important}
+.cxTag{display:inline-block;margin:20px 0 10px;padding:6px 12px;background:var(--cl);color:var(--ci);font:700 10.5px/1 var(--font);letter-spacing:.08em;text-transform:uppercase}
+.cxL .cxTag:first-of-type{margin-top:14px}
+.cxP{margin:0!important}
+.cxEdu strong{display:block;font-size:14px;color:#fff}.cxEdu span{display:block;font-size:12px;color:var(--cm)}
+.cxContact{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}.cxContact ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}.cxContact li{font-size:12.5px!important;color:#fff!important;word-break:break-word}.cxContact li small{display:block;font:500 8.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cl);margin-bottom:3px}
+.cxJob{padding:0 0 11px}.cxJob h4{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:0;font:700 15px/1.25 var(--font);color:#fff}.cxJob h4 time{flex:none;font:500 10.5px/1 var(--mono);letter-spacing:.08em;color:var(--cl)}
+.cxOrg{margin:2px 0 5px!important;color:var(--cm)!important;font-size:12px!important}
+.cxJob ul{margin:0;padding:0;list-style:none;display:grid;gap:3px}.cxJob li{position:relative;padding-left:13px}.cxJob li:before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--cl)}
+.cxHr{border:0;border-top:1.5px dotted rgba(255,255,255,.28);margin:12px 0 0}
+.qrSlot.has{border:0;width:100px;height:100px;border-radius:8px;overflow:hidden;background:#c8ff3f}.qrSlot.has img{display:block;width:100%;height:100%}
+.cxProj{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}.cxProj li{border-left:2px solid var(--cl);padding-left:10px}.cxProj strong{display:block;color:#fff;font-size:12px}
+.cxStats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.cxStats div{border-left:2px solid var(--cl);padding-left:10px}.cxStats b{display:block;font:700 28px/1 var(--font);letter-spacing:-.03em;color:var(--cl)}.cxStats span{display:block;margin-top:4px;font-size:11.5px;color:#d9e0d4}
+.cxNote{margin:7px 0 0!important;font:500 9px/1.2 var(--mono)!important;letter-spacing:.14em;text-transform:uppercase;color:var(--cm)!important}
+.cxChips,.cxTools{display:flex;flex-wrap:wrap;gap:7px}
+.cxChips span{padding:7px 12px;border:1.5px solid rgba(255,255,255,.55);border-radius:6px;font:700 10.5px/1 var(--font);letter-spacing:.03em;text-transform:uppercase;color:#fff}.cxChips span.f{background:#f4f7f1;color:#07090a;border-color:#f4f7f1}
+.cxTools span{display:inline-flex;align-items:center;gap:7px;padding:5px 10px 5px 5px;border:1px solid rgba(255,255,255,.22);border-radius:8px;font-size:11.5px;color:#fff}.cxTools b{display:grid;place-items:center;width:24px;height:24px;border-radius:6px;background:rgba(200,255,63,.14);border:1px solid rgba(200,255,63,.5);color:var(--cl);font:700 11px/1 var(--font)}
+.cxTools span.ai{padding:7px 12px;background:var(--cl);border-color:var(--cl);color:var(--ci);font-weight:700}
+@media screen and (max-width:760px){.cx{grid-template-columns:1fr}.cxPhoto{max-width:280px}}
+@media screen and (max-width:760px){.cvHero{grid-template-columns:1fr}.cvPortrait{order:-1;width:120px}.cvGrid{grid-template-columns:1fr}}
 .cvActions{margin-top:26px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .lb{position:fixed;inset:0;z-index:300;display:none;background:rgba(3,5,4,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff}
 .lb.open{display:flex;flex-direction:column;animation:fade .35s}
 @keyframes fade{from{opacity:0}}
 .lbStage{flex:1;min-height:0;display:grid;place-items:center;padding:64px 70px 10px;position:relative}
 .lbStage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;animation:zoomIn .6s var(--ease)}
+.lbStage.tall{overflow-y:auto;place-items:start center;-webkit-overflow-scrolling:touch}.lbStage.tall img{max-height:none;width:min(100%,880px);height:auto}
 @keyframes zoomIn{from{opacity:0;transform:scale(.94)}}
 .lbBar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:12px 24px 22px;font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#cfd6cc}
 .lbBtn{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:18px;background:rgba(255,255,255,.06);transition:background .3s,color .3s}
@@ -325,7 +413,8 @@ dialog ul{padding-left:20px}
   .heroGrid{grid-template-columns:1fr}
   .heroArt{justify-self:center;max-width:460px;max-height:none;margin-top:10px}
   .chip.c1{left:0}.chip.c2{right:0}
-  .cHead,.story,.about{grid-template-columns:1fr}
+  .cHead,.story{grid-template-columns:1fr}
+  .about{grid-template-columns:minmax(0,1fr)}
   .project.lg .pCard{aspect-ratio:16/10}.project{grid-column:span 3}.project.lg,.project.s6{grid-column:1/-1}
   .job{grid-template-columns:150px 1fr;gap:16px 24px}.job p{grid-column:2}
   .edu{grid-template-columns:1fr}
@@ -340,7 +429,7 @@ dialog ul{padding-left:20px}
 @media(max-width:640px){
   .heroCard .cap,.heroCard .cap2{display:none}
   .hero{padding-top:104px}
-  .projects{grid-template-columns:1fr}.project,.project.lg,.project.s6{grid-column:1/-1}
+  .projects{grid-template-columns:1fr}.project,.project.lg,.project.s6,.project.s2{grid-column:1/-1}
   .pCard,.project.lg .pCard,.project.s6 .pCard{aspect-ratio:4/4.2}
   .stats{grid-template-columns:1fr}
   .stat{border-right:0;border-bottom:1px solid var(--line);padding:18px 0}.stat:last-child{border-bottom:0}
@@ -348,6 +437,7 @@ dialog ul{padding-left:20px}
   .landing{grid-template-columns:1fr}
   .job{grid-template-columns:1fr}.job p{grid-column:auto}
   .pHead{grid-template-columns:1fr;gap:6px}
+  .pMeta{grid-template-columns:1fr}.pMeta div{border-left:0;border-top:1px solid var(--c-line)}.pMeta div:first-child{border-top:0}
   .cFoot{flex-direction:column;align-items:flex-start}.tags{justify-content:flex-start}
   .spin{width:84px;height:84px;right:0}.spin span{width:34px;height:34px;font-size:14px}.spin text{font-size:11px}
   .chip{font-size:9.5px;padding:9px 12px}
@@ -367,13 +457,29 @@ dialog ul{padding-left:20px}
   .js .fig img,.js .heroCard img{transform:none}
 }
 @media print{
-  body{background:#fff;color:#000}body>*{display:none!important}
-  body>#cvDialog{display:block!important;position:static;width:100%;max-height:none;overflow:visible;border:0;padding:0;background:#fff;color:#000;animation:none}
-  #cvDialog::backdrop{display:none}#cvDialog .close,#cvDialog .cvActions{display:none}
-  #cvDialog p,#cvDialog time,#cvDialog h4,#cvDialog .label{color:#333}
-  #cvContent .job{break-inside:avoid;border-color:#ddd}
-  @page{margin:16mm}
+  .cvQR{display:block}
+  html,body{background:#07090a!important;color:#f4f7f1}body>*{display:none!important}
+  body>#cvDialog{display:block!important;position:static!important;margin:0!important;inset:auto!important;transform:none!important;width:210mm!important;max-width:none!important;max-height:none!important;overflow:visible!important;border:0!important;border-radius:0!important;padding:0!important;background:#07090a!important;animation:none!important}
+  #cvDialog::backdrop{display:none}#cvDialog .dHead,#cvDialog .cvActions{display:none!important}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  #cvContent .cvSheet{min-height:297mm;border-radius:0}
+  #cvContent .cvSheet{padding:10mm 11mm 9mm;border:0}#cvContent .cvHero h2{font-size:46px}.cvPortrait{width:118px}.cvHero{padding-bottom:14px}.cvGrid{margin-top:14px;gap:22px}
+  #cvContent .cvSheet{padding:8mm 10mm 7mm}#cvContent .cvHero h2{font-size:40px;margin-bottom:8px}.cvPortrait{width:104px}.cvHero{padding-bottom:10px}.cvGrid{margin-top:11px}.cvSec+.cvSec{margin-top:10px}.cvSec h3{margin-bottom:7px}.cvKicker{margin-bottom:9px}.cvSheet p,.cvSheet li{font-size:10.8px}.cvJob li{font-size:10.8px}#cvContent .cvJob h4{font-size:12.6px}.cvJob{padding:7px 12px;margin-bottom:6px}.cvJob ul{margin-top:3px;gap:1px}.cvWhen{margin-bottom:4px}.cvProj{gap:6px}.cvProj li{padding:6px 10px}.cvProj li{font-size:10.4px}.cvProj strong{font-size:11.2px}.cvBox{padding:8px 12px}.cvContact{gap:4px}.cvList li{font-size:10.6px}.cvList{gap:3px;padding:8px 12px}.cvEdu{padding:8px 12px}
+  .cvSec>p{padding:9px 12px}.cvList{padding:9px 12px}.cvEdu{padding:9px 12px}.cvJob{padding:9px 13px;margin-bottom:7px}.cvProj li{padding:7px 11px}.cvJob ul{margin-top:5px;gap:2px}
+  .cvSheet p,.cvSheet li{font-size:11.3px;line-height:1.55}.cvJob li{font-size:11.2px}.cvJob{padding-bottom:11px}#cvContent .cvJob h4{font-size:13.2px}.cvSec+.cvSec{margin-top:14px}.cvSec h3{margin-bottom:9px}.cvProj{gap:8px}.cvProj strong{font-size:11.6px}.cvProj li{font-size:10.8px;line-height:1.45}.cvList li{font-size:11px}.cvBox{padding:10px 13px}.cvContact{gap:6px}
+  #cvContent .cvSheet{zoom:.92;min-height:322mm}
+  #cvContent .cx{zoom:1!important;min-height:296mm!important;padding:9mm 10mm 8mm!important;gap:9mm;grid-template-columns:72mm 1fr}
+  #cvContent .cx p,#cvContent .cx li{font-size:10.8px;line-height:1.5}
+  #cvContent .cx .cxHello{font-size:15px!important}#cvContent .cx .cxName{font-size:46px}
+  #cvContent .cx .cxTag{margin:15px 0 8px;font-size:9.5px;padding:5px 10px}#cvContent .cx .cxL .cxTag:first-of-type{margin-top:12px}
+  #cvContent .cx .cxJob{padding-bottom:6px}#cvContent .cx .cxJob h4{font-size:13.8px}#cvContent .cx .cxJob li{font-size:10.8px!important}
+  #cvContent .cx .cxStats b{font-size:24px}#cvContent .cx .cxHr{margin-top:9px}
+  #cvContent .cx .cxContact li{font-size:11px!important}#cvContent .cx .cxTag{margin-top:13px}#cvContent .cx .cxHr{margin-top:8px}#cvContent .cx .cxContact li{word-break:normal;font-size:10.4px!important}.cxContact{grid-template-columns:1fr 100px}
+  @page{size:A4;margin:0}
 }
+@media(min-width:1001px){.g.five{grid-template-columns:repeat(10,1fr)}.g.five .fig{grid-column:span 2}}
+h1,h2,h3,h4{text-wrap:balance}p,li,figcaption,.fact strong,.job p{text-wrap:pretty}
+@media(max-width:560px){.badge{font-size:10px;line-height:1.5;letter-spacing:.08em;padding:9px 14px 9px 12px;border-radius:18px}}
 </style>
 </head>
 <body>
@@ -404,15 +510,15 @@ dialog ul{padding-left:20px}
 <section class="hero" id="top">
   <div class="wrap heroGrid">
     <div>
-      <div class="badge"><span class="dot"></span>Graphic Designer · TP. Hồ Chí Minh</div>
+      <div class="badge"><span class="dot"></span>Graphic Designer · Employer&nbsp;Branding&nbsp;&amp;&nbsp;Event&nbsp;Design</div>
       <h1 aria-label="Lý Huỳnh Long. Design with purpose.">
         <span class="ln" style="--d:0"><span>Lý Huỳnh</span></span>
         <span class="ln" style="--d:1"><span>Long<span style="color:var(--accT)">.</span></span></span>
         <span class="ln tag" style="--d:2"><span>Design with <em>purpose.</em></span></span>
       </h1>
-      <p class="intro" data-r style="--d:3">Tôi biến ý tưởng thành <strong>hệ thống hình ảnh có mục đích</strong> — kết nối thương hiệu với con người qua truyền thông tuyển dụng, môi trường làm việc và sự kiện.</p>
+      <p class="intro" data-r style="--d:3">Tôi là Graphic Designer, hiện thiết kế cho <strong>truyền thông tuyển dụng, nội bộ và sự kiện</strong> tại ACB.</p>
       <div class="actions" data-r style="--d:4">
-        <a class="btn pri mag" href="#work">Khám phá công việc <span class="arr">↘</span></a>
+        <a class="btn pri mag" href="#work">Xem dự án <span class="arr">↘</span></a>
         <button class="btn mag" id="openCV" type="button">Xem CV <span class="arr">↗</span></button>
       </div>
     </div>
@@ -429,8 +535,8 @@ dialog ul{padding-left:20px}
   <div class="wrap">
     <div class="stats">
       <div class="stat" data-r><b><span data-count="5">0</span><sup>+</sup></b><span>năm kinh nghiệm<br>thiết kế & truyền thông</span></div>
-      <div class="stat" data-r style="--d:1"><b><span data-count="4">0</span></b><span>thương hiệu đã làm việc<br>ACB · PNJ · Galaxy · ETS</span></div>
-      <div class="stat" data-r style="--d:2"><b><span data-count="3">0</span></b><span>case study<br>được trình bày chi tiết</span></div>
+      <div class="stat" data-r style="--d:1"><b><span data-count="5">0</span></b><span>thương hiệu đã làm việc<br>ACB · PNJ · Saigon Co.op · Galaxy · ETS</span></div>
+      <div class="stat" data-r style="--d:2"><b><span data-count="4">0</span></b><span>case study chính<br>trong portfolio này</span></div>
     </div>
   </div>
   <div class="marquee" aria-label="Thương hiệu đã làm việc cùng">
@@ -445,76 +551,43 @@ dialog ul{padding-left:20px}
 <section class="section" id="work" style="padding-bottom:calc(clamp(80px,11vw,150px) + 40px)">
   <div class="wrap">
     <div class="sHead" data-r>
-      <div><p class="label">01 / Công việc & chuyên môn</p><h2>Từ ý tưởng.<br><em>Đến từng điểm chạm.</em></h2></div>
-      <p>Những mảng công việc tôi đã tham gia — từ phát triển key visual đến triển khai trên nền tảng số và không gian sự kiện.</p>
-    </div>
-    <div class="filters" role="group" aria-label="Lọc lĩnh vực" data-r>
-      <button class="filter" aria-pressed="true" data-filter="all" type="button">Tất cả</button>
-      <button class="filter" aria-pressed="false" data-filter="brand" type="button">Branding & Event</button>
-      <button class="filter" aria-pressed="false" data-filter="internal" type="button">Truyền thông nội bộ</button>
-      <button class="filter" aria-pressed="false" data-filter="digital" type="button">Digital Design</button>
+      <div><p class="label">01 / Công việc & chuyên môn</p><h2>Dự án<br><em>đã thực hiện.</em></h2></div>
+      <p>Từ key visual đến bài đăng mạng xã hội, ấn phẩm và đồ họa sự kiện.</p>
     </div>
     <div class="projects" id="projects">
-      <div class="pGroup" data-r><h3>ACB <em>·</em> Dự án nhóm</h3><span>2024 — nay · 5 dự án</span></div>
+      <div class="pGroup" data-r><h3>ACB</h3><span>2024 — nay · 3 case study chính</span></div>
       <article class="project lg" data-category="brand digital" data-r>
         <a class="pCard tnbc" href="#the-next-banker-2026" aria-label="Xem case study The Next Banker 2026">
           <img src="assets/the-next-banker-2026/tnb-kv-main.jpg" alt="Key visual The Next Banker 2026 với thông điệp Grow As You Are" width="1921" height="1081" loading="eager">
           <div class="pTop"><small>ACB · The Next Banker · 2026</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">01 — New case study</span><h3>Grow As You Are — Trưởng thành từ bản sắc</h3><p>Chiến dịch nhận diện và truyền thông tuyển dụng cho ACB</p></div>
+          <div class="pBot"><span class="k">01 — Tuyển dụng</span><h3>Grow As You Are — Trưởng thành từ bản sắc</h3><p>Thiết kế nhận diện và ấn phẩm truyền thông cho chương trình tuyển dụng ACB</p></div>
         </a>
       </article>
-      <article class="project" data-category="brand internal" data-r>
-        <a class="pCard" href="#leadership-summit-2026" aria-label="Xem case study ACB Leadership Summit 2026">
-          <img src="assets/leadership-summit-2026/hero.webp" alt="Key visual Leadership Summit 2026 How to Be Bold với hình ảnh ngọn hải đăng" width="1600" height="900" loading="lazy">
-          <div class="pTop"><small>ACB · Leadership Summit · 2026</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">02 — Case study</span><h3>How to Be Bold</h3><p>Campaign identity · Event environment · Digital communication</p></div>
-        </a>
-      </article>
-      <article class="project" data-category="brand internal" data-r style="--d:1">
-        <a class="pCard" href="#leadership-summit" aria-label="Xem case study ACB Leadership Summit 2025">
-          <img src="assets/leadership-summit/event-overview.webp" alt="Không gian sự kiện ACB Leadership Summit với hệ thống sân khấu và màn hình LED" width="1920" height="1278" loading="lazy">
-          <div class="pTop"><small>ACB · Leadership Summit · 2025</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">03 — Case study</span><h3>Operational Mastery</h3><p>Event identity · Digital communication · On-site touchpoints</p></div>
-        </a>
-      </article>
-      <article class="project s6" data-category="internal" data-r>
-        <a class="pCard" href="#workplace-branding" aria-label="Xem Workplace Branding: Văn hóa bên trong, hình ảnh bên ngoài">
-          <img src="assets/workplace/cover.webp" alt="Tổng hợp hình ảnh nhận giải HR Asia, ACB Games, Ngày Hạnh phúc, Đối tác sự nghiệp và thiệp Tết 2026" width="2100" height="800" loading="lazy">
-          <div class="pTop"><small>ACB · 2024 — 2025</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">04 — Workplace branding</span><h3>Văn hóa bên trong. Hình ảnh bên ngoài.</h3><p>Ghi nhận · Con người &amp; văn hóa · Đối tác sự nghiệp · Dịp lễ</p></div>
-        </a>
-      </article>
-      <article class="project s6" data-category="digital internal" data-r>
-        <a class="pCard" href="#acb-news" aria-label="Xem Câu chuyện của ACB">
-          <img src="assets/news/cover.webp" alt="Tổng hợp banner bài viết trên acbjobs.com.vn" width="2100" height="800" loading="lazy">
-          <div class="pTop"><small>ACB · acbjobs.com.vn · 2026</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">05 — Editorial banner</span><h3>Câu chuyện của ACB.</h3><p>Banner bài viết · Về ACB · Sự kiện ACB</p></div>
-        </a>
-      </article>
-      <div class="pGroup" data-r><h3>Freelance <em>&</em> Công ty cũ</h3><span>Freelance &amp; dự án trước ACB</span></div>
       <article class="project s6" data-category="brand digital" data-r>
-        <a class="pCard" href="#chuyen-xe-hanh-phuc" aria-label="Xem case study Chuyến Xe Hạnh Phúc 2026">
-          <img src="assets/xhp/cover.webp" alt="Key visual và bộ ảnh Chuyến Xe Hạnh Phúc 2026 của Saigon Co.op" width="2100" height="800" loading="lazy">
-          <div class="pTop"><small>Saigon Co.op · Freelance · 2026</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">06 — Freelance</span><h3>Chuyến Xe Hạnh Phúc 2026.</h3><p>Key visual · Social post · Countdown</p></div>
+        <a class="pCard" href="#doi-tac-su-nghiep" aria-label="Xem chương trình Đối tác sự nghiệp">
+          <img src="assets/doi-tac/cover.webp" alt="Banner Đối tác sự nghiệp Grow You : Grow Us với đội ngũ ACB" width="2100" height="800" loading="lazy">
+          <div class="pTop"><small>ACB · Chương trình tuyển dụng · Làm cùng nhóm</small><span class="pGo">↗</span></div>
+          <div class="pBot"><span class="k">02 — Tuyển dụng</span><h3>Đối tác sự nghiệp. Grow You : Grow Us.</h3><p>Key visual · Social · Landing page</p></div>
         </a>
       </article>
+      <article class="project s6" data-category="brand digital" data-r>
+        <a class="pCard" href="#leadership-summit" aria-label="Xem case study ACB Leadership Summit 2025 và 2026">
+          <img src="assets/leadership-summit-2026/hero.webp" alt="Key visual Leadership Summit 2026 How to Be Bold với hình ảnh ngọn hải đăng" width="1600" height="900" loading="lazy">
+          <div class="pTop"><small>ACB · Leadership Summit · 2025 — 2026</small><span class="pGo">↗</span></div>
+          <div class="pBot"><span class="k">03 — Sự kiện</span><h3>How to Be Bold · Operational Mastery</h3><p>Hai mùa sự kiện · Key visual · Đồ họa sự kiện · Digital</p></div>
+        </a>
+      </article>
+      <div class="pGroup" data-r><h3>Freelance</h3><span>PNJ</span></div>
       <article class="project s6" data-category="brand digital" data-r>
         <a class="pCard" href="#pnj-freelance" aria-label="Xem các thiết kế freelance cho PNJ">
-          <img src="assets/earlier/cover-pnj.webp" alt="Tổng hợp poster và key visual thiết kế cho PNJ" width="2100" height="800" loading="lazy">
+          <img src="assets/pnj/cover.webp" alt="Tổng hợp poster và key visual thiết kế cho PNJ" width="2100" height="800" loading="lazy">
           <div class="pTop"><small>PNJ · Freelance</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">07 — Freelance</span><h3>Trang sức, kể bằng ánh sáng.</h3><p>Social · Poster · Banner · Key visual</p></div>
+          <div class="pBot"><span class="k">04 — Truyền thông thương mại</span><h3>Hình ảnh cho các mùa mua sắm.</h3><p>Social · Poster · Banner · Key visual</p></div>
         </a>
       </article>
-      <article class="project s6" data-category="brand digital" data-r>
-        <a class="pCard" href="#earlier-work" aria-label="Xem các dự án trước ACB">
-          <img src="assets/earlier/cover.webp" alt="Tổng hợp thiết kế cho PNJ, English Time, HP và Shopee Xiaomi" width="2100" height="800" loading="lazy">
-          <div class="pTop"><small>English Time · Happy Book · Casso × OCB</small><span class="pGo">↗</span></div>
-          <div class="pBot"><span class="k">08 — Earlier work</span><h3>Những năm đầu.</h3><p>Social · Banner · Ấn phẩm · Video</p></div>
-        </a>
-      </article>
+      <div class="pGroup" data-r><h3>Các dự án khác</h3><span><a href="#other-work">Workplace · Câu chuyện của ACB · Chuyến Xe Hạnh Phúc · Những năm đầu ↓</a></span></div>
     </div>
-    <p class="note" data-r>The Next Banker 2026, hai mùa Leadership Summit, Workplace Branding, Câu chuyện của ACB, Chuyến Xe Hạnh Phúc, PNJ và các dự án trước ACB được trình bày thành các case study riêng.</p>
+    <p class="note" data-r>The Next Banker 2026, Đối tác sự nghiệp, Leadership Summit (2025 và 2026) và PNJ được trình bày thành case study riêng. Các dự án còn lại nằm trong phần "Các dự án khác" bên dưới.</p>
   </div>
 </section>
 
@@ -523,8 +596,11 @@ dialog ul{padding-left:20px}
   <div class="wrap">
     <div class="cHead" data-r>
       <div><p class="label">Case study / ACB / 2026</p><h2>The Next Banker 2026<span>Grow As You Are.</span></h2></div>
-      <p>Chiến dịch nhận diện và truyền thông tuyển dụng dành cho sinh viên năm cuối, với tinh thần “Trưởng thành từ bản sắc”. Tôi thiết kế key visual, hệ ứng dụng, POSM sự kiện, social và layout website tuyển dụng.</p>
+      <p>Chiến dịch tuyển dụng của ACB cho sinh viên năm cuối: “Trưởng thành từ bản sắc”. Tôi làm key visual, ấn phẩm sự kiện, mạng xã hội và layout website.</p>
     </div>
+    <div class="facts brief" style="--cols:3" data-r><div class="fact"><span>Bài toán</span><strong>Tuyển sinh viên năm cuối với thông điệp “Trưởng thành từ bản sắc”, cần một hình ảnh nhận ra ngay ở trường học, trên mạng xã hội và trên trang tuyển dụng.</strong></div><div class="fact"><span>Cách làm</span><strong>Một bộ nhận diện xanh electric blue và xanh lime, hình khối bo tròn, chữ đậm, dùng chung cho web, ấn phẩm sự kiện và social.</strong></div><div class="fact"><span>Vai trò của tôi</span><strong>Key visual, ấn phẩm sự kiện, social và layout trang tuyển dụng. Phần web chỉ thiết kế layout, bàn giao cho bên phát triển.</strong></div></div>
+    <div class="facts kpis" style="--cols:4" data-r><div class="fact"><span>Hồ sơ ứng tuyển</span><strong>2.057</strong></div><div class="fact"><span>Bạn tham gia thực tế</span><strong>307</strong></div><div class="fact"><span>Hoạt động tại 7 trường</span><strong>13</strong></div><div class="fact"><span>Lượt sinh viên tiếp cận</span><strong>5.234</strong></div></div>
+    <p class="kpiNote" data-r>Số liệu đến 10/2026. Hồ sơ và số bạn tham gia là hai đợt T06 và T09; hoạt động và lượt sinh viên thuộc Campus Attraction 2026.</p>
     <div class="facts" style="--cols:3" data-r>
       <div class="fact"><span>Phạm vi</span><strong>Campaign identity · Event & print · Social · Recruitment website UI</strong></div>
       <div class="fact"><span>Thời gian</span><strong>05/2026 — Hiện tại</strong></div>
@@ -532,7 +608,7 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Key visual & identity</p><h3>Một hệ nhận diện tôn trọng bản sắc riêng.</h3><p>Key visual kết hợp electric blue, lime green, hình học bo tròn và typography mạnh để tạo nhịp trẻ, sáng và dễ nhận diện. Hệ thống giữ cùng một cấu trúc khi đi qua web, print, sự kiện và social.</p></div></div>
+      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Key visual & identity</p><h3>Key visual và bộ nhận diện.</h3><p>Màu xanh electric blue và xanh lime, hình khối bo tròn, chữ đậm.</p></div></div>
       <div class="g">
         <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-kv-main.jpg" alt="Key visual chính của chiến dịch The Next Banker 2026" width="1921" height="1081"><figcaption class="cap">Key visual · Grow As You Are</figcaption></figure>
         <figure class="fig s4 contain fill" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-identity.jpg" alt="Hệ logo và bảng màu nhận diện The Next Banker 2026" width="877" height="445"><figcaption class="cap">Logo system · Color palette</figcaption></figure>
@@ -540,9 +616,9 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Event & print</p><h3>Nhận diện bước vào không gian trải nghiệm.</h3><p>Backdrop và standee tại các trường đại học được triển khai từ cùng hệ màu, pattern và ngôn ngữ hình học. Các ảnh sự kiện cho thấy cách hệ nhận diện hiện diện trong bối cảnh thực tế.</p></div></div>
+      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Event & print</p><h3>Ấn phẩm tại sự kiện ở trường đại học.</h3><p>Backdrop và standee tại các buổi giao lưu ở trường đại học; ảnh chụp thực tế tại sự kiện.</p></div></div>
       <div class="g">
-        <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-backdrop-01.jpg" alt="Backdrop The Next Banker trong không gian sự kiện" width="2048" height="1365"><figcaption class="cap">Backdrop · Event environment</figcaption></figure>
+        <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-backdrop-01.jpg" alt="Backdrop The Next Banker tại sự kiện" width="2048" height="1365"><figcaption class="cap">Backdrop · Đồ họa sự kiện</figcaption></figure>
         <figure class="fig s4 fill" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-standee-01.jpg" alt="Standee The Next Banker tại trường đại học" width="2048" height="1366"><figcaption class="cap">Standee · Mẫu 01</figcaption></figure>
         <figure class="fig s6 a85" data-r><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-event-01.jpg" alt="Sinh viên tham gia hoạt động The Next Banker" width="2048" height="1366"><figcaption class="cap">Event touchpoint · 01</figcaption></figure>
         <figure class="fig s6 a85" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-event-02.jpg" alt="Ảnh tập thể tại chương trình The Next Banker" width="2048" height="1536"><figcaption class="cap">Event touchpoint · 02</figcaption></figure>
@@ -550,46 +626,109 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Recruitment landing page</p><h3>Thông tin dài, được chia thành những nhịp đọc rõ ràng.</h3><p>Landing page dùng typography lớn, card bo tròn và các block có thể quét nhanh. Tôi chỉ thiết kế UI layout và bàn giao cho đơn vị phát triển bên ngoài; không tham gia lập trình website.</p></div></div>
+      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Landing page</p><h3>Layout trang đăng ký tuyển dụng.</h3><p>Chia thành các khối ngắn, chữ lớn, thẻ bo tròn để đọc lướt vẫn hiểu.</p><dl class="pMeta"><div><dt>Mục tiêu</dt><dd>Cho ứng viên xem thông tin chương trình và đăng ký tham gia.</dd></div><div><dt>Cấu trúc</dt><dd>Nội dung do nhóm chốt trước; tôi lên layout và quy tắc trình bày.</dd></div><div><dt>Phần tôi làm</dt><dd>Layout desktop và mobile bằng Illustrator, Photoshop; đóng gói file AI và asset gửi đơn vị phát triển website. Không tham gia lập trình.</dd></div></dl></div></div>
       <figure class="fig s12 nat" data-r style="display:block"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-hero.jpg" alt="Thiết kế hero landing page The Next Banker trên desktop" width="1919" height="847"><figcaption class="cap">Hero & proof points · Desktop</figcaption></figure>
       <div class="landing">
-        <figure class="lcard fig" data-r data-cap="Recruitment timeline"><div class="im"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-timeline.jpg" alt="Thiết kế timeline tuyển dụng The Next Banker" width="847" height="769"></div><figcaption><strong>Recruitment timeline</strong>Toàn bộ mốc tuyển dụng được gom trong một lần cuộn để người xem dễ theo dõi tiến trình.</figcaption></figure>
-        <figure class="lcard fig" data-r style="--d:1" data-cap="Why join"><div class="im"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-why.jpg" alt="Thiết kế nhóm lợi ích và trải nghiệm trong landing page The Next Banker" width="375" height="821"></div><figcaption><strong>Why join</strong>Nhóm lợi ích dùng card đánh số và icon để tách nội dung thành các đơn vị dễ đọc.</figcaption></figure>
-        <figure class="lcard fig" data-r style="--d:2" data-cap="Mobile reading"><div class="im"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-mobile.jpg" alt="Thiết kế giao diện mobile của landing page The Next Banker" width="374" height="728"></div><figcaption><strong>Mobile reading</strong>Nhịp chữ và khoảng cách được giữ dễ đọc trên màn hình nhỏ; fixed CTA bar giúp hành động ứng tuyển luôn ở gần.</figcaption></figure>
+        <figure class="lcard fig" data-r data-cap="Recruitment timeline"><div class="im"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-timeline.jpg" alt="Thiết kế timeline tuyển dụng The Next Banker" width="847" height="769"></div><figcaption><strong>Recruitment timeline</strong>Các mốc tuyển dụng gom trong một màn hình cuộn.</figcaption></figure>
+        <figure class="lcard fig" data-r style="--d:1" data-cap="Why join"><div class="im"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-why.jpg" alt="Thiết kế nhóm lợi ích và trải nghiệm trong landing page The Next Banker" width="375" height="821"></div><figcaption><strong>Why join</strong>Các quyền lợi chia thành thẻ đánh số kèm icon.</figcaption></figure>
+        <figure class="lcard fig" data-r style="--d:2" data-cap="Mobile reading"><div class="im"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/tnb-landing-mobile.jpg" alt="Thiết kế giao diện mobile của landing page The Next Banker" width="374" height="728"></div><figcaption><strong>Mobile reading</strong>Bản mobile giữ chữ dễ đọc, nút ứng tuyển cố định ở cuối màn hình.</figcaption></figure>
       </div>
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">04</span><div><p class="label">Social &amp; campus</p><h3>Chiến dịch tiếp tục trên mạng xã hội và tại các trường đại học.</h3><p>Năm bài đăng và banner tiêu biểu. Các hình còn lại từ ngày hội việc làm tại UEH, NEU và R*CB@ACB chạy trong dải gallery bên dưới, nhấn vào để xem lớn.</p></div></div>
+      <div class="pHead" data-r><span class="no">04</span><div><p class="label">Social &amp; campus</p><h3>Social và ngày hội việc làm.</h3><p>Sáu bài đăng và banner chính; ảnh ngày hội việc làm UEH, NEU, R*CB@ACB ở dải gallery bên dưới.</p></div></div>
       <div class="g">
-        <figure class="fig s4 a11" data-r><img loading="lazy" decoding="async" src="assets/social/tnb-dang-ky-2027.webp" alt="Bài đăng mở đăng ký The Next Banker 2027" width="1020" height="1020"><figcaption class="cap">Mở đăng ký · 01.2027</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/social/tnb-qa.webp" alt="Bài đăng hỏi đáp The Next Banker" width="1020" height="1020"><figcaption class="cap">Q&amp;A</figcaption></figure>
+        <figure class="fig s4 a11" data-r><img loading="lazy" decoding="async" src="assets/social/tnb-dang-ky-2027.webp" alt="Bài đăng mở đăng ký The Next Banker 2027" width="1500" height="1501"><figcaption class="cap">Mở đăng ký · 01.2027</figcaption></figure>
+        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/social/tnb-qa.webp" alt="Bài đăng hỏi đáp The Next Banker" width="1800" height="1800"><figcaption class="cap">Q&amp;A</figcaption></figure>
         <figure class="fig s4 a11" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/social/ufm-ready.webp" alt="Bài đăng UFM Bật chế độ READY" width="1020" height="1020"><figcaption class="cap">UFM · READY</figcaption></figure>
-        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/social/uel-career-expo.webp" alt="Banner UEL Career Expo" width="1020" height="532"><figcaption class="cap">UEL Career Expo</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/social/ueh-see-banking.webp" alt="Banner ACB Experience tại UEH" width="1020" height="533"><figcaption class="cap">ACB Experience × UEH</figcaption></figure>
+        <figure class="fig s4 nat" data-r><img loading="lazy" decoding="async" src="assets/social/uel-career-expo.webp" alt="Banner UEL Career Expo" width="1800" height="943"><figcaption class="cap">UEL Career Expo</figcaption></figure>
+        <figure class="fig s4 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/social/ueh-see-banking.webp" alt="Banner ACB Experience tại UEH" width="1800" height="944"><figcaption class="cap">ACB Experience × UEH</figcaption></figure>
+        <figure class="fig s4 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/social/dhmo-experience.webp" alt="Banner ACB Experience tại Trường ĐH Mở 08.08.2026" width="1800" height="943"><figcaption class="cap">ACB Experience × ĐH Mở</figcaption></figure>
       </div>
-      <div class="strip" data-r aria-label="Gallery các bài đăng và ngày hội việc làm"><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/rcb-grid.webp" alt="Bài đăng R*CB@ACB dạng 4 ô" width="1019" height="1020"><figcaption class="cap">R*CB@ACB</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-1.webp" alt="UEH Career Fair 1" width="509" height="509"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-2.webp" alt="UEH Career Fair 2" width="511" height="509"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-3.webp" alt="UEH Career Fair 3" width="339" height="338"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-4.webp" alt="UEH Career Fair 4" width="335" height="338"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-1.webp" alt="NEU Career Fair 1" width="508" height="507"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-2.webp" alt="NEU Career Fair 2" width="506" height="507"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-3.webp" alt="NEU Career Fair 3" width="339" height="338"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-4.webp" alt="NEU Career Fair 4" width="334" height="338"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/rcb-grid.webp" alt="" width="1019" height="1020"><figcaption class="cap">R*CB@ACB</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-1.webp" alt="" width="509" height="509"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-2.webp" alt="" width="511" height="509"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-3.webp" alt="" width="339" height="338"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-4.webp" alt="" width="335" height="338"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-1.webp" alt="" width="508" height="507"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-2.webp" alt="" width="506" height="507"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-3.webp" alt="" width="339" height="338"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-4.webp" alt="" width="334" height="338"><figcaption class="cap">NEU Career Fair</figcaption></figure></div></div>
+      <div class="strip" data-r aria-label="Gallery các bài đăng và ngày hội việc làm"><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/rcb-grid.webp" alt="Bài đăng R*CB@ACB dạng 4 ô" width="1019" height="1020"><figcaption class="cap">R*CB@ACB</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-1.webp" alt="UEH Career Fair 1" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-2.webp" alt="UEH Career Fair 2" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-3.webp" alt="UEH Career Fair 3" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-4.webp" alt="UEH Career Fair 4" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-5.webp" alt="UEH Career Fair 5" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-1.webp" alt="NEU Career Fair 1" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-2.webp" alt="NEU Career Fair 2" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-3.webp" alt="NEU Career Fair 3" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-4.webp" alt="NEU Career Fair 4" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/neu-5.webp" alt="NEU Career Fair 5" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/rcb-grid.webp" alt="" width="1019" height="1020"><figcaption class="cap">R*CB@ACB</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-1.webp" alt="" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-2.webp" alt="" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-3.webp" alt="" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-4.webp" alt="" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/ueh-fair-5.webp" alt="" width="1201" height="1201"><figcaption class="cap">UEH Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-1.webp" alt="" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-2.webp" alt="" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-3.webp" alt="" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-4.webp" alt="" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/neu-5.webp" alt="" width="1201" height="1201"><figcaption class="cap">NEU Career Fair</figcaption></figure></div></div>
+    </div>
+
+    <div class="panel">
+      <div class="pHead" data-r><span class="no">05</span><div><p class="label">Công cụ tương tác</p><h3>Cổng tương tác cho các bạn tham gia.</h3><p>Nơi các bạn TNB xem tin tức, lịch sự kiện, check-in hằng ngày và theo dõi kết quả.</p><dl class="pMeta"><div><dt>Mục tiêu</dt><dd>Giữ nhịp tương tác với các bạn tham gia trong suốt chương trình.</dd></div><div><dt>Cách làm</dt><dd>Cổng gồm tin tức, sự kiện và lịch học, vườn cây check-in, mini game, tra cứu BSC và KPI cá nhân.</dd></div><div><dt>Phần tôi làm</dt><dd>Cùng nhóm lên ý tưởng và chốt hướng đi, thực hiện web cùng các thành viên, thiết kế giao diện, vận hành và theo dõi.</dd></div></dl></div></div>
+      <div class="g">
+        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/portal-apps.webp" alt="Màn hình ứng dụng của cổng tương tác TNB" width="927" height="713"><figcaption class="cap">Các ứng dụng trong cổng</figcaption></figure>
+        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/portal-news.webp" alt="Trang Tin tức TNB" width="840" height="646"><figcaption class="cap">Tin tức TNB</figcaption></figure>
+        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/portal-garden.webp" alt="Vườn cây check-in hằng ngày" width="929" height="494"><figcaption class="cap">Vườn cây · Check-in hằng ngày</figcaption></figure>
+        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/the-next-banker-2026/portal-game.webp" alt="Mini game TNB Fly" width="923" height="494"><figcaption class="cap">Mini game · TNB Fly</figcaption></figure>
+      </div>
     </div>
 
     <div class="cFoot" data-r>
-      <p>Hệ thống được triển khai nhất quán trên các điểm chạm đã thiết kế, từ nhận diện chính đến không gian sự kiện và layout tuyển dụng.</p>
-      <div class="tags" aria-label="Hạng mục dự án The Next Banker 2026"><span>Key Visual</span><span>Identity System</span><span>Event & Print</span><span>Social Design</span><span>Social &amp; Campus</span><span>UI Layout</span><a href="https://www.acbjobs.com.vn/pages/the-next-banker" target="_blank" rel="noopener noreferrer">Xem chương trình ↗</a></div>
+      <div class="tags" aria-label="Hạng mục dự án The Next Banker 2026"><span>Key Visual</span><span>Identity System</span><span>Event & Print</span><span>Social Design</span><span>Social &amp; Campus</span><span>UI Layout</span><span>Cổng tương tác</span><a href="https://www.acbjobs.com.vn/pages/the-next-banker" target="_blank" rel="noopener noreferrer">Xem chương trình ↗</a></div>
     </div>
   </div>
 </section>
 
-<!-- ═════════ CASE: LEADERSHIP SUMMIT 2026 ═════════ -->
-<section class="case gold" id="leadership-summit-2026" data-gallery>
+<!-- ═════════ CASE: ĐỐI TÁC SỰ NGHIỆP ═════════ -->
+<section class="case blue" id="doi-tac-su-nghiep" data-gallery>
   <div class="wrap">
     <div class="cHead" data-r>
-      <div><p class="label">Featured case study / ACB / 2026</p><h2>Leadership Summit 2026<span>How to Be Bold.</span></h2></div>
-      <p>Một hệ thống hình ảnh kết nối thông điệp lãnh đạo trong thời kỳ biến động với biểu tượng ngọn hải đăng — rõ hướng, bền vững và đủ sức dẫn đường.</p>
+      <div><p class="label">Case study / ACB / Chương trình tuyển dụng</p><h2>Đối tác sự nghiệp<span>Grow You : Grow Us.</span></h2></div>
+      <p>Chương trình tuyển dụng chính của ACB, làm cùng cả nhóm; tôi tham gia phần thiết kế.</p>
     </div>
+    <div class="facts brief" style="--cols:3" data-r><div class="fact"><span>Bài toán</span><strong>Giới thiệu các hướng đi nghề nghiệp và vị trí đang tuyển của ACB tới người ứng tuyển.</strong></div><div class="fact"><span>Cách làm</span><strong>Thông điệp Grow You : Grow Us đi xuyên suốt key visual, bài đăng và landing page trên acbjobs.com.vn.</strong></div><div class="fact"><span>Vai trò của tôi</span><strong>Thành viên nhóm thiết kế, làm cùng cả nhóm ở phần key visual, social và landing page.</strong></div></div>
+    <div class="facts" style="--cols:3" data-r>
+      <div class="fact"><span>Phạm vi</span><strong>Campaign · Key visual · Social · Landing page</strong></div>
+      <div class="fact"><span>Vai trò</span><strong>Thành viên nhóm thiết kế, làm cùng nhóm</strong></div>
+      <div class="fact"><span>Website</span><strong>acbjobs.com.vn/pages/doi-tac-su-nghiep</strong></div>
+    </div>
+
+    <div class="panel">
+      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Key visual &amp; social</p><h3>Key visual và bài đăng.</h3><p>Key visual và bài đăng giới thiệu vị trí tuyển dụng trên website và mạng xã hội.</p></div></div>
+      <div class="g top stag keep4">
+        <figure class="fig s3 nat" data-r><img loading="lazy" decoding="async" src="assets/social/doi-tac-su-nghiep-tablet.webp" alt="Key visual Đối tác sự nghiệp với màn hình tablet phát sáng" width="1012" height="1800"><figcaption class="cap">Đối tác sự nghiệp · Story</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/social/doi-tac-su-nghiep-poster.webp" alt="Poster Đối tác sự nghiệp trên acbjobs.com.vn" width="1206" height="1800"><figcaption class="cap">Đối tác sự nghiệp · Poster</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/social/doi-tac-hcb.webp" alt="Bài đăng Đối tác sự nghiệp HCB" width="509" height="1019"><figcaption class="cap">Đối tác sự nghiệp · HCB</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:3"><img loading="lazy" decoding="async" src="assets/social/doi-tac-cbl.webp" alt="Bài đăng Đối tác sự nghiệp CBL" width="507" height="1019"><figcaption class="cap">Đối tác sự nghiệp · CBL</figcaption></figure>
+        <figure class="fig s12 nat" data-r style="--d:4"><img loading="lazy" decoding="async" src="assets/social/doi-tac-grow.webp" alt="Banner Đối tác sự nghiệp · Grow You : Grow Us" width="1800" height="666"><figcaption class="cap">Đối tác sự nghiệp · Grow You : Grow Us</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Landing page</p><h3>Trang chương trình trên acbjobs.com.vn.</h3><p>Các khối chính: Grow You : Grow Us, hướng đi nghề nghiệp, vị trí tuyển dụng, quy trình ứng tuyển.</p><dl class="pMeta"><div><dt>Mục tiêu</dt><dd>Giúp ứng viên hiểu chương trình, chọn hướng đi và ứng tuyển.</dd></div><div><dt>Cấu trúc</dt><dd>Nội dung do nhóm chốt trước; tôi lên layout và quy tắc trình bày.</dd></div><div><dt>Phần tôi làm</dt><dd>Layout desktop và mobile bằng Illustrator, Photoshop; đóng gói file AI và asset gửi đơn vị phát triển website.</dd></div></dl></div></div>
+      <div class="g top">
+        <figure class="fig s12 nat" data-r><img loading="lazy" decoding="async" src="assets/doi-tac/landing-hero.webp" alt="Landing page Đối tác sự nghiệp: banner Grow You : Grow Us và ba giá trị chương trình" width="1143" height="696"><figcaption class="cap">Đầu trang · Banner &amp; giá trị</figcaption></figure>
+        <figure class="fig s12 nat" data-r><img loading="lazy" decoding="async" src="assets/doi-tac/landing-journey.webp" alt="Landing page Đối tác sự nghiệp: bốn thẻ trưởng thành sự nghiệp và lựa chọn điểm bắt đầu" width="1143" height="860"><figcaption class="cap">Hướng đi &amp; điểm bắt đầu</figcaption></figure>
+        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/doi-tac/landing-jobs.webp" alt="Landing page Đối tác sự nghiệp: các vị trí đang tuyển" width="1143" height="457"><figcaption class="cap">Vị trí đang tuyển</figcaption></figure>
+        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/doi-tac/landing-process.webp" alt="Landing page Đối tác sự nghiệp: quy trình ứng tuyển 6 bước" width="1143" height="429"><figcaption class="cap">Quy trình ứng tuyển</figcaption></figure>
+        <figure class="fig s12 nat" data-r><img loading="lazy" decoding="async" src="assets/doi-tac/landing-culture.webp" alt="Landing page Đối tác sự nghiệp: khối văn hóa Work:Live:Learn@ACB" width="1143" height="540"><figcaption class="cap">Văn hóa Work:Live:Learn@ACB</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="cFoot" data-r>
+      <p>Chương trình tuyển dụng chính của ACB, thực hiện cùng cả nhóm.</p>
+      <div class="tags" aria-label="Hạng mục dự án Đối tác sự nghiệp"><span>Campaign</span><span>Key Visual</span><span>Social Design</span><span>Landing page</span><a href="https://www.acbjobs.com.vn/pages/doi-tac-su-nghiep" rel="noopener noreferrer" target="_blank">Xem trang ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CASE: LEADERSHIP SUMMIT ═════════ -->
+<section class="case gold multi" id="leadership-summit" data-gallery>
+  <div class="wrap">
+    <div class="edIntro" data-r>
+      <p class="label">Case study / ACB / 2025 — 2026</p>
+      <p>Hai mùa, mỗi mùa một chủ đề và một bộ nhận diện. Tôi phụ trách toàn bộ thiết kế, từ key visual, email, mạng xã hội đến sân khấu.</p>
+      <div class="edTabs" role="tablist" aria-label="Chọn mùa sự kiện">
+        <button type="button" role="tab" aria-selected="true" data-ed="leadership-summit-2026">2026 <span>How to Be Bold</span></button>
+        <button type="button" role="tab" aria-selected="false" data-ed="leadership-summit-2025">2025 <span>Operational Mastery</span></button>
+      </div>
+    </div>
+    <div class="edition on" id="leadership-summit-2026" role="tabpanel">
+    <div class="cHead" data-r>
+      <div><p class="label">Featured case study / ACB / 2026</p><h2>Leadership Summit 2026<span>How to Be Bold.</span></h2></div>
+      <p>Key visual và ấn phẩm Leadership Summit 2026, lấy ngọn hải đăng làm trung tâm.</p>
+    </div>
+      <div class="facts brief" style="--cols:3" data-r><div class="fact"><span>Bài toán</span><strong>Chủ đề How to Be Bold cho một sự kiện lãnh đạo, cần nhận diện thống nhất từ thư mời, social đến sân khấu và ấn phẩm tại sự kiện.</strong></div><div class="fact"><span>Cách làm</span><strong>Hình ngọn hải đăng giữa biển động làm trung tâm, tông đen, đồng và vàng, dùng chung cho mọi điểm chạm.</strong></div><div class="fact"><span>Vai trò của tôi</span><strong>Toàn bộ phần thiết kế: key visual, email, social, ứng dụng key visual lên backdrop và màn hình LED, ấn phẩm.</strong></div></div>
     <figure class="heroCard full" data-r><div class="px"><img src="assets/leadership-summit-2026/hero.webp" alt="Key visual Leadership Summit 2026 How to Be Bold" width="1600" height="900" loading="lazy"></div><figcaption class="cap">Leadership in Turbulent Times · HBS Professor Ranjay Gulati</figcaption><span class="cap2">01 / KEY VISUAL</span></figure>
 
     <div class="story">
-      <div data-r><p class="label">01 / Visual direction</p><h3>Giữ vững phương hướng giữa một môi trường đầy biến động.</h3></div>
-      <p data-r style="--d:1">Ngọn hải đăng trở thành hình ảnh trung tâm của campaign: một điểm sáng xuyên qua sóng lớn, tượng trưng cho sự rõ ràng, bản lĩnh và khả năng dẫn dắt. Hệ màu đen, đồng và ánh vàng tạo chiều sâu điện ảnh, đồng thời giữ được chất trang trọng của một diễn đàn lãnh đạo cấp cao.</p>
+      <div data-r><p class="label">01 / Visual direction</p><h3>Ngọn hải đăng giữa biển động.</h3></div>
+      <p data-r style="--d:1">Chủ đề How to Be Bold in Turbulent Times, nên tôi chọn ngọn hải đăng: một điểm sáng đứng vững giữa sóng lớn. “Bold” ở đây là sự kiên định có kỷ luật, không liều lĩnh, nên hình ảnh giữ đơn giản và trang trọng, tông đen, đồng và vàng.</p>
     </div>
     <div class="facts" style="--cols:3" data-r>
       <div class="fact"><span>Chương trình</span><strong>ACB Leadership Summit 2026</strong></div>
@@ -601,15 +740,15 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Event environment</p><h3>Từ key visual đến không gian đối thoại.</h3><p>Hình ảnh ngọn hải đăng được mở rộng trên sân khấu và màn hình sự kiện, tạo một điểm nhận diện xuyên suốt nhưng vẫn để nội dung chuyên môn và người trình bày giữ vai trò trung tâm.</p></div></div>
+      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Đồ họa sự kiện</p><h3>Key visual trên sân khấu.</h3><p>Ngọn hải đăng trên sân khấu và màn hình LED, giữ đơn giản để người trình bày vẫn là trọng tâm.</p></div></div>
       <div class="g">
-        <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/event-room.webp" alt="Toàn cảnh hội trường ACB Leadership Summit 2026" width="1800" height="1200"><figcaption class="cap">Main stage · Event environment</figcaption></figure>
+        <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/event-room.webp" alt="Toàn cảnh hội trường ACB Leadership Summit 2026" width="1800" height="1200"><figcaption class="cap">Main stage · Đồ họa sự kiện</figcaption></figure>
         <figure class="fig s4 fill" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/speaker.webp" alt="Giáo sư Ranjay Gulati trình bày tại Leadership Summit 2026" width="1800" height="1200"><figcaption class="cap">Speaker session</figcaption></figure>
       </div>
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Communication system</p><h3>Một câu chuyện. Ba nhịp thông tin.</h3><p>Save the date, thư mời và email chuẩn bị chương trình được đặt trong cùng một hệ thống, từ thông điệp mở đầu đến thông tin tham dự và tài liệu cần chuẩn bị.</p></div></div>
+      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Communication system</p><h3>Save the date, thư mời, email chuẩn bị.</h3><p>Ba email gửi khách mời: thông báo ngày tổ chức, thư mời, hướng dẫn chuẩn bị; cùng bố cục và hình ảnh.</p></div></div>
       <div class="g top stag tri">
         <figure class="fig s4 nat" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/save-the-date.webp" alt="Thiết kế Save the Date Leadership Summit 2026" width="1000" height="1250"><figcaption class="cap">Save the date</figcaption></figure>
         <figure class="fig s4 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/invitation.webp" alt="Thiết kế thư mời Leadership Summit 2026" width="760" height="1304"><figcaption class="cap">Invitation email</figcaption></figure>
@@ -618,7 +757,7 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">04</span><div><p class="label">Social storytelling</p><h3>Mở rộng campaign ra ngoài không gian sự kiện.</h3><p>Nội dung social kết hợp hình ảnh lãnh đạo với key visual của chương trình, giúp thông điệp “How to Be Bold” tiếp tục hiện diện trên các điểm chạm số.</p></div></div>
+      <div class="pHead" data-r><span class="no">04</span><div><p class="label">Mạng xã hội</p><h3>Bài đăng mạng xã hội.</h3><p>Bài đăng trên LinkedIn và Facebook, ghép ảnh diễn giả với key visual của chương trình.</p></div></div>
       <div class="g" style="align-items:center">
         <figure class="fig s7 a11" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/linkedin.webp" alt="Thiết kế nội dung LinkedIn cho Leadership Summit 2026" width="1100" height="1100"><figcaption class="cap">Leadership quote · LinkedIn</figcaption></figure>
         <figure class="fig s5 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/leadership-summit-2026/facebook.webp" alt="Bài đăng Facebook giới thiệu Leadership Summit 2026" width="693" height="588"><figcaption class="cap">Campaign coverage · Facebook</figcaption></figure>
@@ -626,24 +765,20 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="cFoot" data-r>
-      <p>Từ biểu tượng định hướng đến trải nghiệm tại hội trường, campaign giữ một ngôn ngữ hình ảnh nhất quán: mạnh mẽ, điềm tĩnh và có chiều sâu.</p>
       <div class="tags" aria-label="Hạng mục dự án 2026"><span>Campaign Identity</span><span>Key Visual</span><span>Event Branding</span><span>Email Design</span><span>Social Content</span></div>
     </div>
-  </div>
-</section>
-
-<!-- ═════════ CASE: LEADERSHIP SUMMIT 2025 ═════════ -->
-<section class="case" id="leadership-summit" data-gallery>
-  <div class="wrap">
+    </div>
+    <div class="edition" id="leadership-summit-2025" role="tabpanel">
     <div class="cHead" data-r>
       <div><p class="label">Featured case study / ACB / 2025</p><h2>Leadership Summit 2025<span>Operational Mastery.</span></h2></div>
-      <p>Một hệ thống hình ảnh sự kiện được triển khai xuyên suốt từ điểm chạm truyền thông trước chương trình đến trải nghiệm tại không gian hội nghị.</p>
+      <p>Key visual và ấn phẩm Leadership Summit 2025: email, thư mời, backdrop, màn hình LED, thẻ tên.</p>
     </div>
-    <figure class="heroCard" data-r><div class="px"><img src="assets/leadership-summit/event-overview.webp" alt="Toàn cảnh hội trường Leadership Summit tại JW Marriott Saigon" width="1920" height="1278" loading="lazy"></div><figcaption class="cap">Không gian sự kiện · Sân khấu chính và hệ thống màn hình LED</figcaption><span class="cap2">01 / HERO ENVIRONMENT</span></figure>
+      <div class="facts brief" style="--cols:3" data-r><div class="fact"><span>Bài toán</span><strong>Chủ đề Operational Mastery cho một sự kiện về trải nghiệm khách hàng, cần nhận diện thống nhất từ email đến thẻ tên tại hội nghị.</strong></div><div class="fact"><span>Cách làm</span><strong>Khối cầu cơ khí tượng trưng cho các bộ phận vận hành ăn khớp, tông đen, chrome và vàng, dùng chung cho mọi điểm chạm.</strong></div><div class="fact"><span>Vai trò của tôi</span><strong>Toàn bộ phần thiết kế: key visual, email, backdrop, màn hình LED, bảng chỉ dẫn, agenda, chứng nhận và thẻ tên.</strong></div></div>
+    <figure class="heroCard" data-r><div class="px"><img src="assets/leadership-summit/event-overview.webp" alt="Toàn cảnh hội trường Leadership Summit tại JW Marriott Saigon" width="1920" height="1278" loading="lazy"></div><figcaption class="cap">Đồ họa sự kiện · Sân khấu chính và hệ thống màn hình LED</figcaption><span class="cap2">01 / HERO ENVIRONMENT</span></figure>
 
     <div class="story">
-      <div data-r><p class="label">01 / Visual direction</p><h3>Từ ý niệm vận hành chính xác đến một ngôn ngữ thị giác cao cấp.</h3></div>
-      <p data-r style="--d:1">Campaign sử dụng khối cầu cơ khí làm hình ảnh trung tâm — đại diện cho sự vận hành đồng bộ, độ chính xác và trải nghiệm khách hàng được tạo nên từ nhiều mắt xích. Hệ màu đen, chrome và ánh vàng giúp toàn bộ hệ thống giữ được tinh thần trang trọng, hiện đại của một diễn đàn lãnh đạo.</p>
+      <div data-r><p class="label">01 / Visual direction</p><h3>Khối cầu cơ khí cho chủ đề vận hành.</h3></div>
+      <p data-r style="--d:1">Khối cầu cơ khí tượng trưng cho nhiều bộ phận vận hành ăn khớp để tạo trải nghiệm khách hàng; đen, chrome và vàng giữ vẻ trang trọng.</p>
     </div>
     <div class="facts" style="--cols:3" data-r>
       <div class="fact"><span>Chương trình</span><strong>ACB Leadership Summit</strong></div>
@@ -651,11 +786,11 @@ dialog ul{padding-left:20px}
       <div class="fact"><span>Thời gian</span><strong>15–16.05.2025</strong></div>
       <div class="fact"><span>Địa điểm</span><strong>JW Marriott Hotel & Suites Saigon</strong></div>
       <div class="fact"><span>Phạm vi</span><strong>Digital · Email · POSM</strong></div>
-      <div class="fact"><span>Trải nghiệm</span><strong>Event environment · On-site</strong></div>
+      <div class="fact"><span>Trải nghiệm</span><strong>Đồ họa sự kiện · On-site</strong></div>
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Event environment</p><h3>Visual đi vào không gian.</h3><p>Backdrop, nội dung màn hình LED và bảng chỉ dẫn được gom thành một hệ thống thay vì các sản phẩm rời, giúp người xem thấy ngay mối liên hệ giữa key visual và trải nghiệm tại sự kiện.</p></div></div>
+      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Đồ họa sự kiện</p><h3>Backdrop và màn hình LED.</h3><p>Backdrop, màn hình LED và bảng chỉ dẫn thiết kế cùng nhau để nhìn là nhận ra cùng một sự kiện.</p></div></div>
       <div class="g">
         <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit/stage-speaker.webp" alt="Diễn giả Ryan W. Buell trình bày trước backdrop Leadership Summit" width="1920" height="1277"><figcaption class="cap">Main stage · LED content</figcaption></figure>
         <figure class="fig s4 fill" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/leadership-summit/wayfinding.webp" alt="Bảng chỉ dẫn Leadership Summit tại địa điểm tổ chức" width="1920" height="1277"><figcaption class="cap">Wayfinding</figcaption></figure>
@@ -663,7 +798,7 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Communication toolkit</p><h3>Một key visual. Nhiều nhịp thông tin.</h3><p>Nhóm thiết kế dọc được đặt chung trên một artboard để so sánh cấu trúc, mật độ nội dung và độ nhất quán của hệ nhận diện qua từng điểm chạm.</p></div></div>
+      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Communication toolkit</p><h3>Save the date, thư mời, agenda, chứng nhận.</h3><p>Các thiết kế dọc đặt chung một artboard để kiểm tra bố cục.</p></div></div>
       <div class="g top stag keep4">
         <figure class="fig s3 nat" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit/save-the-date.webp" alt="Thiết kế save the date của Leadership Summit" width="1172" height="1920"><figcaption class="cap">Save the date</figcaption></figure>
         <figure class="fig s3 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/leadership-summit/email-invitation.webp" alt="Thiết kế thư mời email Leadership Summit" width="1041" height="1920"><figcaption class="cap">Email invitation</figcaption></figure>
@@ -673,258 +808,132 @@ dialog ul{padding-left:20px}
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">04</span><div><p class="label">On-site touchpoint</p><h3>Nhận diện tiếp tục ở chi tiết nhỏ.</h3><p>Hệ thống thẻ tên cho thấy cách campaign đi từ hình ảnh chủ đạo xuống một điểm chạm chức năng, nơi tên khách mời và đơn vị cần được đọc nhanh trong không gian thực.</p></div></div>
+      <div class="pHead" data-r><span class="no">04</span><div><p class="label">On-site touchpoint</p><h3>Thẻ tên khách mời.</h3><p>Thẻ tên dùng khối cầu của key visual, nhưng tên khách và đơn vị vẫn đọc nhanh.</p></div></div>
       <div class="g">
         <figure class="fig s8 a169" data-r><img loading="lazy" decoding="async" src="assets/leadership-summit/attendee-badges.webp" alt="Hệ thống thẻ tên khách mời ACB Leadership Summit" width="1920" height="1277"><figcaption class="cap">Attendee badges</figcaption></figure>
-        <aside class="callout" data-r style="--d:1"><div><p class="label">System principle</p><strong>Nhất quán nhưng linh hoạt.</strong></div><p>Cùng một nhịp chữ, màu sắc và hệ hình ảnh; mỗi định dạng được điều chỉnh theo khoảng cách nhìn và lượng thông tin.</p><div class="tags"><span>Identity</span><span>Hierarchy</span><span>Function</span></div></aside>
+        <aside class="callout" data-r style="--d:1"><div><p class="label">Nguyên tắc</p><strong>Giữ chung, chỉnh riêng.</strong></div><p>Cùng kiểu chữ, màu và hình ảnh; mỗi ấn phẩm chỉnh theo khoảng cách nhìn.</p><div class="tags"><span>Identity</span><span>Hierarchy</span><span>Function</span></div></aside>
       </div>
     </div>
 
     <div class="cFoot" data-r>
-      <p>Từ tài liệu mời tham dự đến không gian tổ chức, hệ thống hình ảnh giữ cùng một nhịp điệu: chính xác, tập trung và cao cấp.</p>
       <div class="tags" aria-label="Hạng mục dự án"><span>Key Visual</span><span>Event Branding</span><span>Digital Communication</span><span>POSM</span><span>On-site Experience</span></div>
     </div>
-  </div>
-</section>
-
-<!-- ═════════ ABOUT ═════════ -->
-<!-- ═════════ CASE: WORKPLACE BRANDING ═════════ -->
-<section class="case teal" id="workplace-branding" data-gallery>
-  <div class="wrap">
-    <div class="cHead" data-r>
-      <div><p class="label">Case study / ACB / 2024 — 2025</p><h2>Văn hóa bên trong<span>Hình ảnh bên ngoài.</span></h2></div>
-      <p>Thiết kế và sản xuất nội dung truyền thông cho đào tạo, văn hóa doanh nghiệp và Workplace Branding. Chuyển hóa nội dung chuyên môn thành hình ảnh trực quan để người ACB và ứng viên cùng nhìn thấy câu chuyện bên trong ngân hàng.</p>
-    </div>
-    <div class="facts" style="--cols:3" data-r>
-      <div class="fact"><span>Vai trò</span><strong>Media — Workplace Branding</strong></div>
-      <div class="fact"><span>Thời gian</span><strong>09/2024 — 12/2025</strong></div>
-      <div class="fact"><span>Phạm vi</span><strong>Social post · Key visual · Ấn phẩm nội bộ</strong></div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Ghi nhận &amp; hoạt động</p><h3>Những khoảnh khắc đáng nhớ của người ACB.</h3><p>Hình ảnh nhận giải thưởng HR Asia và giải đấu thể thao nội bộ ACB Games, những nội dung giúp công ty kể về thành tích và đời sống bên ngoài giờ làm việc.</p></div></div>
-      <div class="g">
-        <figure class="fig s4 a23" data-r><img loading="lazy" decoding="async" src="assets/workplace/hr-asia-award.webp" alt="Đại diện ACB nhận giải thưởng HR Asia" width="1365" height="2048"><figcaption class="cap">HR Asia Awards</figcaption></figure>
-        <figure class="fig s8 fill" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/workplace/acb-games-pickleball.webp" alt="Lễ trao giải ACB Games môn Pickleball" width="2048" height="1363"><figcaption class="cap">ACB Games · Pickleball</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Con người &amp; văn hóa</p><h3>Những câu chuyện của người ACB, trong một hệ nội dung chung.</h3><p>Các bài đăng dưới hashtag #ACBTalentEcosystem: thông điệp, hình ảnh nhân sự và hoạt động gắn kết như Ngày Hạnh phúc.</p></div></div>
-      <div class="g">
-        <figure class="fig s4 a11" data-r><img loading="lazy" decoding="async" src="assets/workplace/quote-ngan-dieu-thuong.webp" alt="Bài đăng thông điệp Ngàn điều thường giấu một điều Thương" width="901" height="901"><figcaption class="cap">Talent Ecosystem · Thông điệp</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/workplace/quote-du-an-phu-hop.webp" alt="Bài đăng hình ảnh nhân sự kèm câu trích dẫn" width="901" height="901"><figcaption class="cap">Talent Ecosystem · Nhân sự</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/workplace/ngay-hanh-phuc.webp" alt="Bài đăng Ngày Hạnh phúc với tập thể nhân viên ACB" width="1200" height="1200"><figcaption class="cap">Ngày Hạnh phúc</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Đối tác sự nghiệp</p><h3>Một lời mời tuyển dụng, kể bằng hình ảnh.</h3><p>Key visual và bài đăng social của chuỗi Đối tác sự nghiệp, giới thiệu các vị trí tuyển dụng của ACB trên acbjobs.com.vn và các kênh mạng xã hội.</p></div></div>
-      <div class="g top stag keep4">
-        <figure class="fig s3 nat" data-r><img loading="lazy" decoding="async" src="assets/social/doi-tac-su-nghiep-tablet.webp" alt="Key visual Đối tác sự nghiệp với màn hình tablet phát sáng" width="1012" height="1800"><figcaption class="cap">Đối tác sự nghiệp · Story</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/social/doi-tac-su-nghiep-poster.webp" alt="Poster Đối tác sự nghiệp trên acbjobs.com.vn" width="1206" height="1800"><figcaption class="cap">Đối tác sự nghiệp · Poster</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/social/doi-tac-hcb.webp" alt="Bài đăng Đối tác sự nghiệp HCB" width="509" height="1019"><figcaption class="cap">Đối tác sự nghiệp · HCB</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:3"><img loading="lazy" decoding="async" src="assets/social/doi-tac-cbl.webp" alt="Bài đăng Đối tác sự nghiệp CBL" width="507" height="1019"><figcaption class="cap">Đối tác sự nghiệp · CBL</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">04</span><div><p class="label">Dịp lễ</p><h3>Những dịp chung của người ACB và mọi nhà.</h3><p>Các bài đăng chúc mừng Quốc khánh, Trung Thu và Tết 2026, giữ chung giọng điệu gần gũi với cộng đồng.</p></div></div>
-      <div class="g">
-        <figure class="fig s4 a11" data-r><img loading="lazy" decoding="async" src="assets/social/quoc-khanh-2025.webp" alt="Bài đăng Quốc khánh 2025 của ACB" width="1020" height="1020"><figcaption class="cap">Quốc khánh 2025</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/workplace/trung-thu.webp" alt="Bài đăng Trung thu của mọi nhà" width="1000" height="1001"><figcaption class="cap">Trung Thu</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/workplace/tet-2026.webp" alt="Bài chúc mừng năm mới 2026 của ACB" width="1201" height="1201"><figcaption class="cap">Tết 2026</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="cFoot" data-r>
-      <p>Mỗi bài đăng giữ cùng một giọng điệu: gần gũi với người ACB, rõ thông điệp với người xem bên ngoài.</p>
-      <div class="tags" aria-label="Hạng mục Workplace Branding"><span>Social Design</span><span>Key Visual</span><span>Employer Branding</span><span>Seasonal Content</span></div>
-    </div>
-  </div>
-</section>
-<!-- ═════════ CASE: ACB NEWS ═════════ -->
-<section class="case blue" id="acb-news" data-gallery>
-  <div class="wrap">
-    <div class="cHead" data-r>
-      <div><p class="label">Case study / ACB / 2026</p><h2>Câu chuyện<span>của ACB.</span></h2></div>
-      <p>Banner cho các bài viết trên chuyên trang tuyển dụng acbjobs.com.vn: thông tin doanh nghiệp, phát biểu của lãnh đạo và những sự kiện đáng chú ý, trình bày bằng hình ảnh rõ ràng, nhất quán với nhận diện thương hiệu ACB.</p>
-    </div>
-    <div class="facts" style="--cols:3" data-r>
-      <div class="fact"><span>Vai trò</span><strong>Thiết kế banner bài viết</strong></div>
-      <div class="fact"><span>Nền tảng</span><strong>acbjobs.com.vn / Câu chuyện của ACB</strong></div>
-      <div class="fact"><span>Phạm vi</span><strong>Editorial banner · Typography · Photo treatment</strong></div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Về ACB &amp; Sự kiện ACB</p><h3>Thông tin doanh nghiệp, được kể như một câu chuyện.</h3><p>Mỗi banner dùng một thông điệp chính, ảnh nhân vật, công trình hoặc sự kiện làm điểm nhấn và màu xanh ACB làm sợi dây chung.</p></div></div>
-      <div class="g">
-        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/news/new-york.webp" alt="Banner bài viết Từ Việt Nam đến New York" width="1920" height="712"><figcaption class="cap">Từ Việt Nam đến New York</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/news/forbes-tu-tien-phat.webp" alt="Banner bài viết Tổng Giám đốc ACB Từ Tiến Phát" width="1920" height="712"><figcaption class="cap">Tổng Giám đốc ACB Từ Tiến Phát</figcaption></figure>
-        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/news/di-san-nha-sang-lap.webp" alt="Banner bài viết Di sản nhà sáng lập ACB" width="1920" height="712"><figcaption class="cap">Di sản nhà sáng lập ACB</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/news/ueh-hoc-bong.webp" alt="Banner bài viết ACB và UEH mở đầu hành trình Học bổng ACB – Trần Mộng Hùng" width="1920" height="712"><figcaption class="cap">ACB và UEH · Học bổng ACB – Trần Mộng Hùng</figcaption></figure>
-        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/news/bao-hiem-phi-nhan-tho.webp" alt="Banner bài viết ACB được cấp phép thành lập công ty bảo hiểm phi nhân thọ" width="1920" height="712"><figcaption class="cap">Công ty bảo hiểm phi nhân thọ ACB</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/news/top-20-vnsi.webp" alt="Banner bài viết ACB vào Top 20 VNSI" width="1920" height="712"><figcaption class="cap">ACB vào Top 20 VNSI</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Trên trang</p><h3>Các banner khi hiển thị trong trang tin.</h3><p>Danh sách bài viết tại mục Câu chuyện của ACB trên acbjobs.com.vn.</p></div></div>
-      <div class="g">
-        <figure class="fig s12 a169 top" data-r><img loading="lazy" decoding="async" src="assets/news/acbjobs-news-grid.webp" alt="Trang Câu chuyện của ACB trên acbjobs.com.vn" width="1600" height="1407"><figcaption class="cap">acbjobs.com.vn · Câu chuyện của ACB</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="cFoot" data-r>
-      <p>Banner được thiết kế theo tỉ lệ rộng để dùng cho cả đầu bài viết lẫn thẻ xem trước, vẫn đọc rõ khi bị cắt gọn.</p>
-      <div class="tags" aria-label="Hạng mục Câu chuyện của ACB"><span>Editorial Design</span><span>Typography</span><span>Photo Treatment</span><a href="https://acbjobs.com.vn/news" target="_blank" rel="noopener noreferrer">acbjobs.com.vn/news ↗</a></div>
     </div>
   </div>
 </section>
 
-<!-- ═════════ CASE: CHUYẾN XE HẠNH PHÚC ═════════ -->
-<section class="case coop" id="chuyen-xe-hanh-phuc" data-gallery>
-  <div class="wrap">
-    <div class="cHead" data-r>
-      <div><p class="label">Freelance / Saigon Co.op / 2026</p><h2>Chuyến Xe<span>Hạnh Phúc 2026.</span></h2></div>
-      <p>Chương trình tặng vé xe Tết 0 đồng “Cùng Saigon Co.op về quê đón Tết”. Tôi thiết kế key visual và các bài đăng social, từ thông tin khởi hành, đếm ngược đăng ký đến câu chuyện của những hành khách.</p>
-    </div>
-    <div class="facts" style="--cols:3" data-r>
-      <div class="fact"><span>Vai trò</span><strong>Freelance Graphic Designer</strong></div>
-      <div class="fact"><span>Khách hàng</span><strong>Saigon Co.op · Co.opmart</strong></div>
-      <div class="fact"><span>Phạm vi</span><strong>Key visual · Social post · Countdown</strong></div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Key visual</p><h3>Chiếc xe nhỏ, chở cả mùa Tết về nhà.</h3><p>Key visual chính với chiếc xe linh vật, hành lý và gia đình sum họp trên nền đỏ, vàng của ngày Tết, cùng bài thông tin khởi hành.</p></div></div>
-      <div class="g top">
-        <figure class="fig s8 nat" data-r><img loading="lazy" decoding="async" src="assets/xhp/kv.webp" alt="Key visual Chuyến Xe Hạnh Phúc 2026 của Saigon Co.op" width="1067" height="667"><figcaption class="cap">Key visual · Chuyến Xe Hạnh Phúc 2026</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/xhp/thong-tin-khoi-hanh.webp" alt="Bài đăng thông tin khởi hành Chuyến Xe Hạnh Phúc" width="1600" height="1600"><figcaption class="cap">Thông tin khởi hành</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Đếm ngược &amp; đăng ký</p><h3>Những con số lớn nhắc người xem hành động.</h3><p>Chuỗi bài đếm ngược đăng ký vé xe 0 đồng và khởi hành, dùng chữ số lớn làm điểm nhấn và thông tin gói gọn ở phần dưới.</p></div></div>
-      <div class="g top stag">
-        <figure class="fig s4 nat" data-r><img loading="lazy" decoding="async" src="assets/xhp/con-3-ngay.webp" alt="Poster Chỉ còn 3 ngày đăng ký vé xe 0 đồng" width="1638" height="2048"><figcaption class="cap">Chỉ còn 3 ngày</figcaption></figure>
-        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/xhp/khoi-hanh-1-ngay.webp" alt="Bài đăng Chỉ còn 1 ngày Chuyến Xe Hạnh Phúc chính thức khởi hành" width="1201" height="1201"><figcaption class="cap">Chỉ còn 1 ngày · Khởi hành</figcaption></figure>
-        <figure class="fig s4 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/xhp/con-1-ngay-ngang.webp" alt="Banner Chỉ còn 1 ngày đăng ký nhận vé xe 0 đồng" width="1022" height="679"><figcaption class="cap">Chỉ còn 1 ngày · Đăng ký</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Social &amp; hoạt động</p><h3>Câu chuyện của những người về quê đón Tết.</h3><p>Bộ bài đăng trên fanpage Co.opmart: ảnh linh vật cùng bà con và chuỗi chân dung kèm lời kể ngắn.</p></div></div>
-      <div class="g top">
-        <figure class="fig s6 a11" data-r><img loading="lazy" decoding="async" src="assets/xhp/mascot-4-anh.webp" alt="Bộ ảnh linh vật Co.opmart cùng bà con trong chương trình Chuyến Xe Hạnh Phúc" width="1018" height="1018"><figcaption class="cap">Linh vật & bà con</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/xhp/nguoi-lao-dong-5-anh.webp" alt="Chuỗi bài đăng chân dung người lao động kèm lời kể về chuyến xe Tết" width="1018" height="848"><figcaption class="cap">Chân dung & lời kể</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="cFoot" data-r>
-      <p>Một thông điệp, một nhân vật xe buýt, màu đỏ vàng quen thuộc: giữ chương trình dễ nhận ra ở mọi định dạng.</p>
-      <div class="tags" aria-label="Hạng mục"><span>Key Visual</span><span>Social Design</span><span>Countdown Post</span><span>Seasonal Campaign</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═════════ CASE: EARLIER WORK ═════════ -->
-<!-- ═════════ CASE: PNJ ═════════ -->
 <section class="case rose" id="pnj-freelance" data-gallery>
   <div class="wrap">
     <div class="cHead" data-r>
-      <div><p class="label">Freelance / PNJ</p><h2>Trang sức,<span>kể bằng ánh sáng.</span></h2></div>
-      <p>Thiết kế social post, poster sự kiện, banner ưu đãi và key visual theo mùa cho PNJ: Hành trình Trang sức xuyên Việt, Style by PNJ, Disney × PNJ và Tết.</p>
+      <div><p class="label">Freelance / PNJ</p><h2>Hình ảnh cho<span>các mùa mua sắm.</span></h2></div>
+      <p>Social, poster, banner ưu đãi, ấn phẩm in và key visual theo mùa: Hành trình Trang sức xuyên Việt, Style by PNJ, Disney × PNJ, Tết và các dịp lễ.</p>
     </div>
+    <div class="facts brief" style="--cols:3" data-r><div class="fact"><span>Bài toán</span><strong>Nhiều chiến dịch theo mùa và dịp lễ, mỗi chiến dịch một màu riêng nhưng vẫn phải nhận ra là PNJ.</strong></div><div class="fact"><span>Cách làm</span><strong>Đổi bảng màu theo từng chiến dịch, như navy và vàng, hồng và vàng, tông Tết, nhưng vẫn giữ nhận diện của PNJ.</strong></div><div class="fact"><span>Vai trò của tôi</span><strong>Freelance Graphic Designer: social, poster, banner ưu đãi và ấn phẩm in.</strong></div></div>
     <div class="facts" style="--cols:3" data-r>
       <div class="fact"><span>Vai trò</span><strong>Freelance Graphic Designer</strong></div>
-      <div class="fact"><span>Khách hàng</span><strong>PNJ</strong></div>
-      <div class="fact"><span>Phạm vi</span><strong>Social · Poster · Banner · Key visual</strong></div>
+      <div class="fact"><span>Khách hàng</span><strong>PNJ · Style by PNJ</strong></div>
+      <div class="fact"><span>Phạm vi</span><strong>Social · Poster · Banner · Ấn phẩm in</strong></div>
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Poster &amp; key visual</p><h3>Cảm xúc của trang sức, trong từng khung hình.</h3><p>Các poster theo chiến dịch, giữ chất liệu ánh vàng, xanh navy và tông cảm xúc sang trọng của thương hiệu.</p></div></div>
-      <div class="g top stag keep4">
-        <figure class="fig s3 nat" data-r><img loading="lazy" decoding="async" src="assets/earlier/pnj-style.webp" alt="Poster Style by PNJ mùa lễ hội" width="673" height="1512"><figcaption class="cap">Style by PNJ</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/earlier/pnj-tet.webp" alt="Key visual PNJ Vui nhẹ Tết Quý như Vàng" width="1050" height="1468"><figcaption class="cap">Tết · Quý như Vàng</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/earlier/pnj-tang-phuc.webp" alt="Poster PNJ ca sĩ Tăng Phúc" width="761" height="743"><figcaption class="cap">PNJ · Biểu diễn âm nhạc</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:3"><img loading="lazy" decoding="async" src="assets/earlier/pnj-hanh-trinh.webp" alt="Poster PNJ Hành trình Trang sức xuyên Việt" width="761" height="765"><figcaption class="cap">Hành trình xuyên Việt</figcaption></figure>
+      <div class="pHead" data-r><span class="no">01</span><div><p class="label">Poster &amp; key visual</p><h3>Poster theo từng chiến dịch.</h3><p>Xanh navy và vàng cho Hành trình Trang sức xuyên Việt; hồng và vàng trẻ hơn cho Style by PNJ.</p></div></div>
+      <div class="g top stag keep4 five">
+        <figure class="fig s3 nat" data-r><img loading="lazy" decoding="async" src="assets/pnj/hanh-trinh.webp" alt="Poster PNJ Hành trình Trang sức xuyên Việt" width="1011" height="1517"><figcaption class="cap">Hành trình Trang sức xuyên Việt</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/pnj/style.webp" alt="Poster Style by PNJ mùa lễ hội" width="673" height="1512"><figcaption class="cap">Style by PNJ · Mùa lễ hội</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/pnj/sun-lover.webp" alt="Poster Style by PNJ Sun Lover" width="946" height="1622"><figcaption class="cap">Style by PNJ · Sun Lover</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:3"><img loading="lazy" decoding="async" src="assets/pnj/style-bat-khi-chat.webp" alt="Poster Style by PNJ Bật khí chất riêng" width="828" height="1659"><figcaption class="cap">Style by PNJ · Bật khí chất riêng</figcaption></figure>
+        <figure class="fig s3 nat" data-r style="--d:4"><img loading="lazy" decoding="async" src="assets/pnj/nguoi-ban-vang.webp" alt="Poster PNJ dịch vụ cầm và thu mua trang sức Người Bạn Vàng" width="865" height="1617"><figcaption class="cap">Người Bạn Vàng</figcaption></figure>
       </div>
     </div>
 
     <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Social &amp; banner</p><h3>Ưu đãi và thông điệp, gói gọn trong mỗi định dạng.</h3><p>Bài đăng social, banner website và banner ưu đãi Disney × PNJ.</p></div></div>
+      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Social post</p><h3>Bài đăng mạng xã hội.</h3><p>Bài đăng cho sự kiện biểu diễn âm nhạc, trải nghiệm thương hiệu, ngày 20/10 và các bộ sưu tập mới.</p></div></div>
       <div class="g top">
-        <figure class="fig s3 a11" data-r><img loading="lazy" decoding="async" src="assets/earlier/pnj-noo.webp" alt="Poster PNJ ca sĩ Noo Phước Thịnh" width="743" height="749"><figcaption class="cap">PNJ · Noo Phước Thịnh</figcaption></figure>
-        <figure class="fig s3 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/earlier/pnj-deo-trang-suc.webp" alt="Poster PNJ Đeo trang sức cho người thân" width="743" height="743"><figcaption class="cap">PNJ · Social</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/earlier/pnj-tran-trong.webp" alt="Banner PNJ Trân trọng sẻ chia" width="1541" height="569"><figcaption class="cap">PNJ · Banner</figcaption></figure>
-        <figure class="fig s12 nat" data-r><img loading="lazy" decoding="async" src="assets/earlier/pnj-disney.webp" alt="Banner Disney PNJ" width="1541" height="575"><figcaption class="cap">PNJ × Disney</figcaption></figure>
-        <figure class="fig s12 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/earlier/pnj-tet-strip.webp" alt="Banner ngang PNJ Tết" width="1520" height="99"><figcaption class="cap">PNJ · Banner Tết</figcaption></figure>
+        <figure class="fig s4 a11" data-r><img loading="lazy" decoding="async" src="assets/pnj/tang-phuc.webp" alt="Poster PNJ ca sĩ Tăng Phúc biểu diễn" width="1700" height="1700"><figcaption class="cap">Tăng Phúc · Biểu diễn âm nhạc</figcaption></figure>
+        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/pnj/noo.webp" alt="Poster PNJ ca sĩ Noo Phước Thịnh" width="743" height="749"><figcaption class="cap">Noo Phước Thịnh · Biểu diễn âm nhạc</figcaption></figure>
+        <figure class="fig s4 a11" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/pnj/dyson.webp" alt="Poster PNJ trải nghiệm chăm sóc tóc Dyson" width="1700" height="1700"><figcaption class="cap">Trải nghiệm Dyson</figcaption></figure>
+        <figure class="fig s4 a11" data-r><img loading="lazy" decoding="async" src="assets/pnj/tran-trong.webp" alt="Bài đăng PNJ Trân trọng sẻ chia mừng 20-10" width="1700" height="1700"><figcaption class="cap">Trân trọng sẻ chia · 20/10</figcaption></figure>
+        <figure class="fig s4 a11" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/pnj/family-infinity.webp" alt="Bài đăng PNJ bộ sưu tập Family Infinity" width="554" height="554"><figcaption class="cap">Family Infinity</figcaption></figure>
+        <figure class="fig s4 a11" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/pnj/deo-trang-suc.webp" alt="Bài đăng PNJ Đeo trang sức cho người thân" width="743" height="743"><figcaption class="cap">Đeo trang sức cho người thân</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Banner &amp; ưu đãi</p><h3>Banner ưu đãi.</h3><p>Banner website theo chương trình Disney × PNJ, Tết và Trân trọng sẻ chia.</p></div></div>
+      <div class="g top">
+        <figure class="fig s12 nat" data-r><img loading="lazy" decoding="async" src="assets/pnj/disney.webp" alt="Banner Disney PNJ Đón ưu đãi vô cực" width="1700" height="551"><figcaption class="cap">Disney × PNJ</figcaption></figure>
+        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/pnj/tet-kv.webp" alt="Key visual PNJ Vui như Tết Quý như Vàng" width="1000" height="563"><figcaption class="cap">Tết · Quý như Vàng</figcaption></figure>
+        <figure class="fig s6 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/pnj/tran-trong-ngang.webp" alt="Banner PNJ Trân trọng sẻ chia quà tặng dây chuyền vàng" width="1536" height="865"><figcaption class="cap">Trân trọng sẻ chia · Banner</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="pHead" data-r><span class="no">04</span><div><p class="label">Ấn phẩm in</p><h3>Phiếu ưu đãi và phong bì.</h3><p>Phiếu ưu đãi và phong bì chúc mừng 8/3.</p></div></div>
+      <div class="g top stag keep4">
+        <figure class="fig s6 nat" data-r><img loading="lazy" decoding="async" src="assets/pnj/phieu-uu-dai.webp" alt="Phiếu ưu đãi PNJ 830.000đ Mỹ quyền không cần khuôn mẫu" width="1203" height="1213"><figcaption class="cap">Phiếu ưu đãi · 8/3</figcaption></figure>
+        <figure class="fig s6 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/pnj/phong-bi-8-3.webp" alt="Thiết kế phong bì PNJ chúc mừng Ngày Quốc tế Phụ nữ" width="1188" height="854"><figcaption class="cap">Phong bì · 8/3</figcaption></figure>
       </div>
     </div>
 
     <div class="cFoot" data-r>
-      <p>Một hệ hình ảnh sang trọng, thay đổi theo từng mùa và từng chiến dịch.</p>
-      <div class="tags" aria-label="Hạng mục"><span>Social Design</span><span>Poster</span><span>Banner</span><span>Seasonal Campaign</span></div>
+      <div class="tags" aria-label="Hạng mục"><span>Social Design</span><span>Poster</span><span>Banner</span><span>Print</span><span>Seasonal Campaign</span></div>
     </div>
   </div>
 </section>
 
-<section class="case rose" id="earlier-work" data-gallery>
+<section class="section other" id="other-work" style="padding-bottom:calc(clamp(80px,11vw,150px) + 40px)">
   <div class="wrap">
-    <div class="cHead" data-r>
-      <div><p class="label">Trước ACB</p><h2>Những năm đầu<span>Công ty cũ &amp; dự án khác.</span></h2></div>
-      <p>Các dự án thiết kế social, banner và ấn phẩm truyền thông cho English Time, Happy Book, Casso × OCB và nhiều khách hàng khác, trước khi tôi gia nhập ACB.</p>
+    <div class="sHead" data-r>
+      <div><p class="label">Dự án khác</p><h2>Dự án<br><em>khác.</em></h2></div>
+      <p>Di chuột để dừng dải ảnh, nhấn vào ảnh để xem lớn.</p>
     </div>
-    <div class="facts" style="--cols:3" data-r>
-      <div class="fact"><span>Vai trò</span><strong>Graphic Designer · Editor · Photo/Video</strong></div>
-      <div class="fact"><span>Khách hàng</span><strong>English Time · Happy Book · Casso × OCB</strong></div>
-      <div class="fact"><span>Phạm vi</span><strong>Social · Banner · Background · Retouch · Video</strong></div>
+    <div class="oBlock" id="workplace-branding" data-gallery>
+      <div class="oHead" data-r><span class="k">ACB · 2024 — 2025</span><h3>Workplace branding</h3><p>Hoạt động nội bộ, chuỗi #ACBTalentEcosystem và bài đăng ngày lễ. Giải HR Asia là giải chung của ACB; nhóm tôi xây dựng nội dung và thiết kế slide trình bày.</p></div>
+      <div class="strip var" data-r><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/hr-asia-award.webp" alt="Đại diện ACB nhận giải thưởng HR Asia" width="1365" height="2048"><figcaption class="cap">HR Asia Awards</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/acb-games-pickleball.webp" alt="Lễ trao giải ACB Games môn Pickleball" width="2048" height="1363"><figcaption class="cap">ACB Games · Pickleball</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/quote-ngan-dieu-thuong.webp" alt="Bài đăng thông điệp Ngàn điều thường giấu một điều Thương" width="901" height="901"><figcaption class="cap">Talent Ecosystem · Thông điệp</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/quote-du-an-phu-hop.webp" alt="Bài đăng hình ảnh nhân sự kèm câu trích dẫn" width="901" height="901"><figcaption class="cap">Talent Ecosystem · Nhân sự</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/ngay-hanh-phuc.webp" alt="Bài đăng Ngày Hạnh phúc với tập thể nhân viên ACB" width="1200" height="1200"><figcaption class="cap">Ngày Hạnh phúc</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/social/quoc-khanh-2025.webp" alt="Bài đăng Quốc khánh 2025 của ACB" width="1020" height="1020"><figcaption class="cap">Quốc khánh 2025</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/trung-thu.webp" alt="Bài đăng Trung thu của mọi nhà" width="1000" height="1001"><figcaption class="cap">Trung Thu</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/workplace/tet-2026.webp" alt="Bài chúc mừng năm mới 2026 của ACB" width="1201" height="1201"><figcaption class="cap">Tết 2026</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/hr-asia-award.webp" alt="" width="1365" height="2048"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/acb-games-pickleball.webp" alt="" width="2048" height="1363"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/quote-ngan-dieu-thuong.webp" alt="" width="901" height="901"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/quote-du-an-phu-hop.webp" alt="" width="901" height="901"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/ngay-hanh-phuc.webp" alt="" width="1200" height="1200"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/social/quoc-khanh-2025.webp" alt="" width="1020" height="1020"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/trung-thu.webp" alt="" width="1000" height="1001"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/workplace/tet-2026.webp" alt="" width="1201" height="1201"></figure></div></div>
     </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">01</span><div><p class="label">English Time · Happy Book</p><h3>Màu sắc vui tươi cho giáo dục và sản phẩm trẻ em.</h3><p>Hội thao, tuyển sinh và minigame cho trung tâm Anh ngữ English Time, cùng banner thương hiệu sách tương tác Happy Book.</p></div></div>
-      <div class="g top">
-        <figure class="fig s3 nat" data-r><img loading="lazy" decoding="async" src="assets/earlier/et-hoi-thao.webp" alt="Poster Hội thao English Time" width="1342" height="1437"><figcaption class="cap">English Time · Hội thao</figcaption></figure>
-        <figure class="fig s3 nat" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/earlier/et-tuyen-sinh.webp" alt="Poster tuyển sinh English Time" width="644" height="606"><figcaption class="cap">English Time · Tuyển sinh</figcaption></figure>
-        <figure class="fig s6 nat" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/earlier/hb-banner.webp" alt="Banner Happy Book Cùng con khôn lớn" width="1600" height="591"><figcaption class="cap">Happy Book · Banner</figcaption></figure>
+    <div class="oBlock" id="internal-email" data-gallery>
+      <div class="oHead" data-r><span class="k">ACB · 2025 — 2026</span><h3>Email truyền thông nội bộ</h3><p>Email của Khối Quản trị Nguồn nhân lực gửi nhân viên ACB: tuyển dụng PRM, lương thưởng dịp Tết và ngày 8/3.</p></div>
+      <div class="emails">
+        <figure class="fig ecard" data-r><img loading="lazy" decoding="async" src="assets/workplace/email-prm.webp" alt="Email tuyển dụng Giám đốc Quan hệ Khách hàng Ưu tiên PRM của Khối Quản trị Nguồn nhân lực ACB" width="1100" height="2271"><figcaption class="cap">Tuyển dụng · PRM</figcaption></figure>
+        <figure class="fig ecard" data-r style="--d:1"><img loading="lazy" decoding="async" src="assets/workplace/email-tet-2026.webp" alt="Email thông tin giảm trừ gia cảnh và kế hoạch chi lương thưởng dịp Tết 2026 của ACB" width="1100" height="1553"><figcaption class="cap">Lương thưởng · Tết 2026</figcaption></figure>
+        <figure class="fig ecard" data-r style="--d:2"><img loading="lazy" decoding="async" src="assets/workplace/email-8-3.webp" alt="Email chào mừng ngày Quốc tế Phụ nữ 8/3 của Khối Quản trị Nguồn nhân lực ACB" width="1100" height="1988"><figcaption class="cap">Ngày Quốc tế Phụ nữ 8/3</figcaption></figure>
       </div>
     </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">02</span><div><p class="label">Casso × OCB</p><h3>Thông điệp ưu đãi, rõ ràng ngay từ cái nhìn đầu tiên.</h3><p>Banner đối tác công nghệ Casso × OCB với một con số chủ đạo, các lợi ích được xếp gọn bên cạnh.</p></div></div>
-      <div class="g">
-        <figure class="fig s12 nat" data-r><img loading="lazy" decoding="async" src="assets/earlier/casso-2.webp" alt="Banner Casso x OCB giảm 50% phí Casso" width="1600" height="607"><figcaption class="cap">Casso × OCB</figcaption></figure>
-      </div>
+    <div class="oBlock" id="acb-news" data-gallery>
+      <div class="oHead" data-r><span class="k">ACB · acbjobs.com.vn · 2026</span><h3>Câu chuyện của ACB</h3><p>Banner bài viết về ACB và sự kiện ACB trên trang tin tuyển dụng.</p></div>
+      <div class="strip var" data-r><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/news/new-york.webp" alt="Banner bài viết Từ Việt Nam đến New York" width="1920" height="712"><figcaption class="cap">Từ Việt Nam đến New York</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/news/forbes-tu-tien-phat.webp" alt="Banner bài viết Tổng Giám đốc ACB Từ Tiến Phát" width="1920" height="712"><figcaption class="cap">Tổng Giám đốc ACB Từ Tiến Phát</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/news/di-san-nha-sang-lap.webp" alt="Banner bài viết Di sản nhà sáng lập ACB" width="1920" height="712"><figcaption class="cap">Di sản nhà sáng lập ACB</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/news/ueh-hoc-bong.webp" alt="Banner bài viết ACB và UEH mở đầu hành trình Học bổng ACB – Trần Mộng Hùng" width="1920" height="712"><figcaption class="cap">ACB và UEH · Học bổng ACB – Trần Mộng Hùng</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/news/acbjobs-news-grid.webp" alt="Trang Câu chuyện của ACB trên acbjobs.com.vn" width="1600" height="1407"><figcaption class="cap">acbjobs.com.vn · Câu chuyện của ACB</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/news/new-york.webp" alt="" width="1920" height="712"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/news/forbes-tu-tien-phat.webp" alt="" width="1920" height="712"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/news/di-san-nha-sang-lap.webp" alt="" width="1920" height="712"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/news/ueh-hoc-bong.webp" alt="" width="1920" height="712"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/news/acbjobs-news-grid.webp" alt="" width="1600" height="1407"></figure></div></div>
     </div>
-
-    <div class="panel">
-      <div class="pHead" data-r><span class="no">03</span><div><p class="label">Thêm tác phẩm</p><h3>Những dự án nhỏ, gom trong một dải gallery.</h3><p>Ảnh sản phẩm, landing page, banner sự kiện, nhận diện cho hoạt động tình nguyện và các video đã dựng. Di chuột để dừng, nhấn để xem lớn.</p></div></div>
-      <div class="strip var" data-r aria-label="Gallery các dự án khác"><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/et-minigame.webp" alt="Minigame Freetime with English Time" width="1286" height="753"><figcaption class="cap">English Time · Minigame</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/hb-dollhouse.webp" alt="Ảnh sản phẩm Dollhouse Handbag của Happy Book" width="809" height="1082"><figcaption class="cap">Happy Book · Sản phẩm</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/hb-flatlay.webp" alt="Ảnh sản phẩm Happy Book" width="988" height="657"><figcaption class="cap">Happy Book · Sản phẩm</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/hb-landing.webp" alt="Landing page Happy Book giảm 30%" width="663" height="647"><figcaption class="cap">Happy Book · Landing</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/casso-1.webp" alt="Banner Casso x OCB giảm 50% phí" width="1172" height="780"><figcaption class="cap">Casso × OCB</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/hp-envy.webp" alt="Poster HP Envy x360" width="1261" height="1533"><figcaption class="cap">HP Envy x360</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/shopee-xiaomi.webp" alt="Poster Shopee Xiaomi 6.6" width="1237" height="1533"><figcaption class="cap">Shopee × Xiaomi</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/so-vo-league.webp" alt="Banner Sơ Vợ League 2023" width="1600" height="797"><figcaption class="cap">Sơ Vợ League 2023</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/vhs-er.webp" alt="Ấn phẩm VHS-ER Do U Know" width="850" height="652"><figcaption class="cap">Đoàn Thanh niên · VHS-ER</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/mang-nang-logo.webp" alt="Logo Mang nắng về bên em" width="657" height="696"><figcaption class="cap">Mang nắng về bên em</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/mang-nang-demo.webp" alt="Logo Mang nắng về bên em các phiên bản" width="858" height="780"><figcaption class="cap">Logo · Phiên bản màu</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/ginn-collage.webp" alt="Collage cá nhân GINN" width="925" height="928"><figcaption class="cap">Collage · GINN</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/dzu.webp" alt="Phim phóng sự Nhà của Dzú" width="1518" height="694"><figcaption class="cap">Video · Nhà của Dzú</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/tiktok.webp" alt="Video TikTok Vừa chơi game vừa được đấm bóp" width="876" height="1560"><figcaption class="cap">Video · TikTok</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/video-hb-1.webp" alt="Video Happy Book Dollhouse Handbag" width="473" height="817"><figcaption class="cap">Video · Happy Book</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/video-hb-2.webp" alt="Video Happy Book nhà búp bê" width="468" height="817"><figcaption class="cap">Video · Happy Book</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/et-minigame.webp" alt="" width="1286" height="753"><figcaption class="cap">English Time · Minigame</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/hb-dollhouse.webp" alt="" width="809" height="1082"><figcaption class="cap">Happy Book · Sản phẩm</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/hb-flatlay.webp" alt="" width="988" height="657"><figcaption class="cap">Happy Book · Sản phẩm</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/hb-landing.webp" alt="" width="663" height="647"><figcaption class="cap">Happy Book · Landing</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/casso-1.webp" alt="" width="1172" height="780"><figcaption class="cap">Casso × OCB</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/hp-envy.webp" alt="" width="1261" height="1533"><figcaption class="cap">HP Envy x360</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/shopee-xiaomi.webp" alt="" width="1237" height="1533"><figcaption class="cap">Shopee × Xiaomi</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/so-vo-league.webp" alt="" width="1600" height="797"><figcaption class="cap">Sơ Vợ League 2023</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/vhs-er.webp" alt="" width="850" height="652"><figcaption class="cap">Đoàn Thanh niên · VHS-ER</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/mang-nang-logo.webp" alt="" width="657" height="696"><figcaption class="cap">Mang nắng về bên em</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/mang-nang-demo.webp" alt="" width="858" height="780"><figcaption class="cap">Logo · Phiên bản màu</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/ginn-collage.webp" alt="" width="925" height="928"><figcaption class="cap">Collage · GINN</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/dzu.webp" alt="" width="1518" height="694"><figcaption class="cap">Video · Nhà của Dzú</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/tiktok.webp" alt="" width="876" height="1560"><figcaption class="cap">Video · TikTok</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/video-hb-1.webp" alt="" width="473" height="817"><figcaption class="cap">Video · Happy Book</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/video-hb-2.webp" alt="" width="468" height="817"><figcaption class="cap">Video · Happy Book</figcaption></figure></div></div>
+    <div class="oBlock" id="chuyen-xe-hanh-phuc" data-gallery>
+      <div class="oHead" data-r><span class="k">Saigon Co.op · Freelance · 2026</span><h3>Chuyến Xe Hạnh Phúc</h3><p>Key visual, chuỗi bài đếm ngược đăng ký vé xe và bài đăng trên fanpage Co.opmart.</p></div>
+      <div class="strip var" data-r><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/xhp/kv.webp" alt="Key visual Chuyến Xe Hạnh Phúc 2026 của Saigon Co.op" width="1067" height="667"><figcaption class="cap">Key visual · Chuyến Xe Hạnh Phúc 2026</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/xhp/thong-tin-khoi-hanh.webp" alt="Bài đăng thông tin khởi hành Chuyến Xe Hạnh Phúc" width="1600" height="1600"><figcaption class="cap">Thông tin khởi hành</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/xhp/con-3-ngay.webp" alt="Poster Chỉ còn 3 ngày đăng ký vé xe 0 đồng" width="1638" height="2048"><figcaption class="cap">Chỉ còn 3 ngày</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/xhp/khoi-hanh-1-ngay.webp" alt="Bài đăng Chỉ còn 1 ngày Chuyến Xe Hạnh Phúc chính thức khởi hành" width="1201" height="1201"><figcaption class="cap">Chỉ còn 1 ngày · Khởi hành</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/xhp/mascot-4-anh.webp" alt="Bộ ảnh linh vật Co.opmart cùng bà con trong chương trình Chuyến Xe Hạnh Phúc" width="1018" height="1018"><figcaption class="cap">Linh vật & bà con</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/xhp/nguoi-lao-dong-5-anh.webp" alt="Chuỗi bài đăng chân dung người lao động kèm lời kể về chuyến xe Tết" width="1018" height="848"><figcaption class="cap">Chân dung & lời kể</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/xhp/kv.webp" alt="" width="1067" height="667"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/xhp/thong-tin-khoi-hanh.webp" alt="" width="1600" height="1600"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/xhp/con-3-ngay.webp" alt="" width="1638" height="2048"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/xhp/khoi-hanh-1-ngay.webp" alt="" width="1201" height="1201"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/xhp/mascot-4-anh.webp" alt="" width="1018" height="1018"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/xhp/nguoi-lao-dong-5-anh.webp" alt="" width="1018" height="848"></figure></div></div>
     </div>
-
-    <div class="cFoot" data-r>
-      <p>Giai đoạn này giúp tôi quen với nhịp làm việc nhanh, nhiều định dạng, từ social, banner đến video ngắn.</p>
-      <div class="tags" aria-label="Hạng mục"><span>Social Design</span><span>Banner</span><span>Retouch</span><span>Video Editing</span><span>Logo</span></div>
+    <div class="oBlock" id="earlier-work" data-gallery>
+      <div class="oHead" data-r><span class="k">English Time · Galaxy Group · Casso × OCB</span><h3>Những năm đầu</h3><p>Poster, banner, landing page và logo từ những năm đầu: English Time, Galaxy Group, Casso × OCB và một số nhãn hàng khác.</p></div>
+      <div class="strip var" data-r><div class="track"><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/et-hoi-thao.webp" alt="Poster Hội thao English Time" width="1496" height="1600"><figcaption class="cap">English Time · Hội thao</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/et-vna.webp" alt="Banner English Time khoá đào tạo tiếp viên hàng không Vietnam Airlines" width="526" height="526"><figcaption class="cap">English Time · Tiếp viên hàng không</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/et-tuyen-dung.webp" alt="Bộ banner tuyển dụng giáo viên tiếng Anh của English Time" width="612" height="614"><figcaption class="cap">English Time · Tuyển dụng giáo viên</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/casso-2.webp" alt="Banner Casso x OCB giảm 50% phí Casso" width="1800" height="684"><figcaption class="cap">Casso × OCB</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/hb-landing.webp" alt="Landing page Happy Book giảm 30%" width="663" height="647"><figcaption class="cap">Galaxy Group · Landing Happy Book</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/hp-envy.webp" alt="Poster HP Envy x360" width="1261" height="1533"><figcaption class="cap">HP Envy x360</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/shopee-xiaomi.webp" alt="Poster Shopee Xiaomi 6.6" width="1237" height="1533"><figcaption class="cap">Shopee × Xiaomi</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/so-vo-league.webp" alt="Banner Sơ Vợ League 2023" width="1600" height="797"><figcaption class="cap">Sơ Vợ League 2023</figcaption></figure><figure class="fig tile"><img loading="lazy" decoding="async" src="assets/earlier/mang-nang-logo.webp" alt="Logo Mang nắng về bên em" width="657" height="696"><figcaption class="cap">Mang nắng về bên em</figcaption></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/et-hoi-thao.webp" alt="" width="1496" height="1600"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/et-vna.webp" alt="" width="526" height="526"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/et-tuyen-dung.webp" alt="" width="612" height="614"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/casso-2.webp" alt="" width="1800" height="684"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/hb-landing.webp" alt="" width="663" height="647"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/hp-envy.webp" alt="" width="1261" height="1533"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/shopee-xiaomi.webp" alt="" width="1237" height="1533"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/so-vo-league.webp" alt="" width="1600" height="797"></figure><figure class="fig tile dup" aria-hidden="true"><img loading="lazy" decoding="async" src="assets/earlier/mang-nang-logo.webp" alt="" width="657" height="696"></figure></div></div>
     </div>
   </div>
 </section>
 
 <section class="section" id="about" style="padding-bottom:calc(clamp(80px,11vw,150px))">
   <div class="wrap about">
-    <div data-r>
+    <div class="aboutHead" data-r>
       <p class="label">02 / Về tôi</p>
-      <h2>Thiết kế hình ảnh.<br><em>Kết nối con người.</em></h2>
+      <h2>Designer cho truyền thông<br><em>tuyển dụng và sự kiện.</em></h2>
+    </div>
+    <div data-r>
       <div class="skills">
-        <div class="skill"><span>01</span><div><h3>Concept & Key Visual</h3><p>Phát triển ý tưởng và ngôn ngữ hình ảnh cho chiến dịch.</p></div></div>
-        <div class="skill"><span>02</span><div><h3>Hệ thống ấn phẩm</h3><p>Triển khai nhất quán từ nội dung số đến POSM sự kiện.</p></div></div>
+        <div class="skill"><span>01</span><div><h3>Concept & Key Visual</h3><p>Lên ý tưởng và hình ảnh chính cho chiến dịch.</p></div></div>
+        <div class="skill"><span>02</span><div><h3>Hệ thống ấn phẩm</h3><p>Từ bài đăng online đến POSM tại sự kiện.</p></div></div>
         <div class="skill"><span>03</span><div><h3>Video & Motion</h3><p>Hỗ trợ quay chụp, dựng recap và nội dung chuyển động.</p></div></div>
+        <div class="skill"><span>04</span><div><h3>AI trong quy trình</h3><p>Phân tích, lên kịch bản và dựng công cụ cho chương trình.</p></div></div>
       </div>
     </div>
     <div class="aboutText" data-r style="--d:1">
-      <p>Tôi là <strong>Long, Graphic Designer</strong> với nền tảng Truyền thông. Công việc của tôi trải rộng từ thiết kế nội dung số đến hình ảnh cho thương hiệu nhà tuyển dụng, văn hóa doanh nghiệp và sự kiện.</p>
-      <p>Tại ACB, tôi tham gia phát triển concept, key visual và triển khai hệ thống ấn phẩm trên ACB Jobs, LinkedIn, Facebook cùng các điểm chạm tại sự kiện. Trước đó, tôi sản xuất nội dung cho các chương trình đào tạo và truyền thông nội bộ.</p>
-      <p>Kinh nghiệm cộng tác với PNJ và làm việc tại Galaxy Group, English Time School giúp tôi tiếp cận nhiều bối cảnh thiết kế — từ một bài đăng đến bộ ấn phẩm đa định dạng.</p>
-      <div class="tools" aria-label="Công cụ sử dụng"><span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span><span>After Effects</span></div>
+      <p>Tôi là <strong>Long, Graphic Designer</strong>, học ngành Truyền thông, có hơn 5 năm làm thiết kế và truyền thông ở nhiều môi trường. Từ 2024 tôi làm tại ACB, hiện tập trung vào tuyển dụng và sự kiện.</p>
+      <p>Tại ACB, tôi làm concept, key visual và ấn phẩm cho ACB Jobs, LinkedIn, Facebook và sự kiện. Tôi phối hợp trực tiếp với nhà in, đơn vị phát triển website và đối tác bên ngoài ở một số sự kiện lớn.</p>
+      <p>Ngoài ACB, tôi từng làm cho Galaxy Group, English Time School và freelance cho PNJ.</p>
+      <p>Từ 2025, tôi dùng AI để phân tích vấn đề, so sánh giải pháp trước khi thiết kế, lên kịch bản chương trình, dựng app trò chơi và cơ chế tương tác cho giao lưu, workshop, job fair TNB, và hỗ trợ xây dựng, vận hành cổng tương tác cho các bạn tham gia.</p>
+      <div class="tools" aria-label="Công cụ sử dụng"><span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span><span>After Effects</span><span>ChatGPT · Codex</span><span>Claude</span><span>Google AI Studio</span></div>
     </div>
   </div>
 </section>
@@ -933,11 +942,10 @@ dialog ul{padding-left:20px}
 <section class="section" id="experience" style="padding-top:0;padding-bottom:calc(clamp(80px,11vw,150px) + 40px)">
   <div class="wrap">
     <div class="sHead" data-r>
-      <div><p class="label">03 / Hành trình nghề nghiệp</p><h2>Kinh nghiệm tích lũy.<br><em>Góc nhìn mở rộng.</em></h2></div>
-      <p>Từ thiết kế nội dung số đến truyền thông thương hiệu và trải nghiệm tại nơi làm việc.</p>
+      <div><p class="label">03 / Hành trình nghề nghiệp</p><h2>Kinh nghiệm<br><em>làm việc.</em></h2></div>
     </div>
     <div class="timeline">
-      <article class="job" data-r><time>12/2025 — Hiện tại</time><div><h3>Media — Event Branding</h3><h4>Ngân hàng TMCP Á Châu · ACB</h4></div><p>Phát triển concept, key visual và hệ thống ấn phẩm cho Employer Branding, tuyển dụng và sự kiện thu hút nhân tài. Triển khai ACB Jobs, LinkedIn, Facebook và POSM.</p></article>
+      <article class="job" data-r><time>12/2025 — Hiện tại</time><div><h3>Media — Event Branding</h3><h4>Ngân hàng TMCP Á Châu · ACB</h4></div><p>Phát triển concept, key visual và hệ thống ấn phẩm cho Employer Branding, tuyển dụng và sự kiện thu hút nhân tài. Triển khai thiết kế trên ACB Jobs, LinkedIn, Facebook và ấn phẩm sự kiện (POSM).</p></article>
       <article class="job" data-r><time>09/2024 — 12/2025</time><div><h3>Media — Workplace Branding</h3><h4>Ngân hàng TMCP Á Châu · ACB</h4></div><p>Thiết kế nội dung cho đào tạo, văn hóa doanh nghiệp và Workplace Branding. Chuyển hóa nội dung chuyên môn thành hình ảnh; hỗ trợ quay chụp và dựng video recap.</p></article>
       <article class="job" data-r><time>2022 — 2025 · Freelance</time><div><h3>Freelance Graphic Designer</h3><h4>Công ty CP Vàng Bạc Đá Quý Phú Nhuận · PNJ</h4></div><p>Thiết kế POSM, infographic và key visual cho truyền thông nội bộ, sự kiện. Triển khai banner, standee, backdrop, booth, decal và màn hình LED.</p></article>
       <article class="job" data-r><time>2022 — 08/2024</time><div><h3>Graphic Designer & Digital Marketing</h3><h4>Galaxy Group</h4></div><p>Thiết kế đồ họa, banner Facebook Ads, Google Ads và nội dung truyền thông số cho các dự án sản phẩm mới.</p></article>
@@ -955,8 +963,8 @@ dialog ul{padding-left:20px}
 <section class="contact" id="contact">
   <div class="wrap">
     <p class="label" data-r>04 / Cơ hội tiếp theo</p>
-    <h2 aria-label="Cùng tạo nên những kết nối mới."><span class="ln"><span data-split>Cùng tạo nên</span></span><span class="ln"><span data-split style="transition-delay:.12s"><em>những kết nối mới.</em></span></span></h2>
-    <p class="lead" data-r>Tôi đang tìm kiếm cơ hội mới trong Graphic Design, Employer Branding và Event Branding. Rất mong được trao đổi cùng anh/chị về vị trí phù hợp.</p>
+    <h2 aria-label="Cần một designer? Nhắn cho tôi."><span class="ln"><span data-split>Cần một designer?</span></span><span class="ln"><span data-split style="transition-delay:.12s"><em>Nhắn cho tôi.</em></span></span></h2>
+    <p class="lead" data-r>Tôi đang tìm cơ hội mới ở mảng Graphic Design, Employer Branding và Event Branding. Nếu anh/chị có vị trí phù hợp, mời liên hệ với tôi.</p>
     <div class="cRow" data-r>
       <a class="email" href="mailto:lyhuynh.long0901@gmail.com">lyhuynh.long0901@gmail.com ↗</a>
       <a class="btn mag" href="tel:0966569727">096.6569.727 <span class="arr">↗</span></a>
@@ -968,7 +976,47 @@ dialog ul{padding-left:20px}
 
 <!-- Dialogs -->
 <dialog id="projectDialog" aria-labelledby="projectTitle" data-lenis-prevent><div class="dHead"><p class="label">Phạm vi công việc</p><button class="close" type="button" aria-label="Đóng thông tin">×</button></div><h2 id="projectTitle"></h2><div id="projectBody"></div></dialog>
-<dialog id="cvDialog" aria-labelledby="cvTitle" data-lenis-prevent><div class="dHead"><p class="label">Hồ sơ ứng tuyển</p><button class="close" type="button" aria-label="Đóng CV">×</button></div><div id="cvContent"><h2 id="cvTitle">Lý Huỳnh Long</h2><p>Graphic Designer · Employer Branding · Workplace & Event Branding<br>TP. Hồ Chí Minh · 096.6569.727 · lyhuynh.long0901@gmail.com</p><h3>Kinh nghiệm làm việc</h3><div id="cvJobs"></div><h3>Học vấn</h3><p>Cử nhân Truyền thông · Đại học Văn hóa TP. Hồ Chí Minh · 2019–2023</p><h3>Công cụ</h3><p>Photoshop · Illustrator · Premiere Pro · After Effects</p></div><div class="cvActions"><button class="btn pri" id="printCV" type="button">In / Lưu CV thành PDF <span class="arr">↗</span></button><p style="margin:0;font-size:12px">Bản CV tóm tắt từ thông tin đã cung cấp.</p></div></dialog>
+<dialog id="cvDialog" aria-labelledby="cvTitle" data-lenis-prevent><div class="dHead"><p class="label">Hồ sơ ứng tuyển</p><button class="close" type="button" aria-label="Đóng CV">×</button></div>
+<div id="cvContent"><div class="cvSheet cx">
+  <div class="cxL">
+    <div class="cxPhoto"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><img src="assets/profile-ly-huynh-long.webp" alt="Lý Huỳnh Long" width="1000" height="1249" loading="lazy"></div>
+    <p class="cxHello">Xin chào, tôi là</p>
+    <h2 id="cvTitle" class="cxName">Lý Huỳnh<br>Long<em>.</em></h2>
+    <p class="cxRole">Graphic Designer · Employer Branding &amp; Event Design</p>
+    <span class="cxTag">Giới thiệu</span>
+    <p class="cxP">Graphic Designer hơn 5 năm làm thiết kế và truyền thông, tại ACB từ 2024. Hiện làm concept, key visual và ấn phẩm cho tuyển dụng, nội bộ và sự kiện; từ 2025 ứng dụng AI để lên kịch bản và dựng công cụ tương tác.</p>
+    <span class="cxTag">Học vấn</span>
+    <div class="cxEdu"><strong>Cử nhân Truyền thông</strong><span>Đại học Văn hóa TP. Hồ Chí Minh</span><span>2019 – 2023</span></div>
+    <span class="cxTag">Liên hệ</span>
+    <div class="cxContact">
+      <ul><li><small>Email</small>lyhuynh.long0901@gmail.com</li><li><small>Điện thoại</small>096.6569.727</li><li><small>Portfolio</small>renows.github.io/portfolio</li><li><small>Khu vực</small>TP. Hồ Chí Minh</li></ul>
+      <div class="cvQR"><div class="qrSlot has" id="cvQrSlot"><img src="assets/qr-portfolio.png" alt="QR dẫn tới portfolio online" width="600" height="600"></div><small>Portfolio online</small></div>
+    </div>
+  </div>
+  <div class="cxR">
+    <span class="cxTag">Kinh nghiệm làm việc</span>
+    <article class="cxJob"><h4>Media — Event Branding<time>12/2025 — nay</time></h4><p class="cxOrg">Ngân hàng TMCP Á Châu (ACB)</p>
+      <ul><li>Concept, key visual và hệ thống ấn phẩm cho tuyển dụng và sự kiện; triển khai trên ACB Jobs, LinkedIn, Facebook và POSM.</li><li>Thiết kế chính chiến dịch The Next Banker 2026 (tuyển dụng sinh viên năm cuối, 2.057 hồ sơ), hỗ trợ xây dựng và vận hành cổng tương tác cho các bạn tham gia.</li><li>Làm cùng nhóm chương trình Đối tác sự nghiệp; phối hợp nhà in và đối tác ngoài ở các sự kiện lớn.</li></ul></article>
+    <article class="cxJob"><h4>Media — Workplace Branding<time>09/2024 — 12/2025</time></h4><p class="cxOrg">Ngân hàng TMCP Á Châu (ACB)</p>
+      <ul><li>Thiết kế nội dung đào tạo, văn hóa và Workplace Branding; toàn bộ nhận diện và ấn phẩm ACB Leadership Summit 2025.</li><li>Cùng nhóm xây dựng nội dung và thiết kế slide giải HR Asia của ACB; hỗ trợ quay chụp, dựng recap.</li></ul></article>
+    <article class="cxJob"><h4>Freelance Graphic Designer<time>2022 — 2025</time></h4><p class="cxOrg">PNJ</p>
+      <ul><li>POSM, infographic và key visual cho truyền thông nội bộ và sự kiện; banner, standee, backdrop, booth, màn hình LED.</li><li>Social, poster và ấn phẩm in theo mùa cho các chiến dịch PNJ, Style by PNJ.</li></ul></article>
+    <article class="cxJob"><h4>Graphic Designer &amp; Digital Marketing<time>2022 — 08/2024</time></h4><p class="cxOrg">Galaxy Group</p>
+      <ul><li>Đồ họa, banner Facebook Ads, Google Ads và nội dung số cho các dự án sản phẩm mới.</li></ul></article>
+    <article class="cxJob"><h4>Graphic Designer &amp; Digital Marketing<time>2020 — 2022</time></h4><p class="cxOrg">English Time School</p>
+      <ul><li>Hình ảnh Fanpage, banner và ấn phẩm sự kiện cho English Time School.</li></ul></article>
+    <hr class="cxHr">
+    <span class="cxTag">Dự án tiêu biểu</span>
+    <ul class="cxProj"><li><strong>The Next Banker 2026 · ACB</strong>Key visual, ấn phẩm, social, layout landing page, cổng tương tác.</li><li><strong>Leadership Summit 2025 &amp; 2026 · ACB</strong>Mỗi mùa một nhận diện, từ email đến sân khấu.</li><li><strong>Đối tác sự nghiệp · ACB</strong>Key visual, social, landing page, làm cùng nhóm.</li><li><strong>Các mùa mua sắm · PNJ</strong>Poster, social, banner, ấn phẩm in (freelance).</li></ul>
+    <hr class="cxHr">
+    <span class="cxTag">Kỹ năng</span>
+    <div class="cxChips"><span>Key visual chiến dịch</span><span class="f">Hệ thống ấn phẩm · POSM</span><span>Đồ họa sự kiện</span><span class="f">Social &amp; digital</span><span>Layout landing page</span><span class="f">Làm việc với nhà in</span><span>Quay chụp · recap</span></div>
+    <hr class="cxHr">
+    <span class="cxTag">Công cụ</span>
+    <div class="cxTools"><span><b>Ps</b>Photoshop</span><span><b>Ai</b>Illustrator</span><span><b>Pr</b>Premiere</span><span><b>Ae</b>After Effects</span><span class="ai">ChatGPT · Codex</span><span class="ai">Claude</span><span class="ai">Google AI Studio</span></div>
+  </div>
+</div></div>
+<div class="cvActions"><button class="btn pri" id="printCV" type="button">In / Lưu CV thành PDF <span class="arr">↗</span></button></div></dialog>
 
 <!-- Lightbox -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh lớn" aria-hidden="true">
@@ -1050,7 +1098,7 @@ function update(){
 window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);update();
 if('IntersectionObserver' in window){
   var spyIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.dataset.spyGroup;spyLinks.forEach(function(a){a.classList.toggle('on',a.dataset.spy===id)})}})},{rootMargin:'-45% 0px -50% 0px'});
-  [['work','work'],['the-next-banker-2026','work'],['leadership-summit-2026','work'],['leadership-summit','work'],['workplace-branding','work'],['acb-news','work'],['chuyen-xe-hanh-phuc','work'],['pnj-freelance','work'],['earlier-work','work'],['about','about'],['experience','experience']].forEach(function(p){var el=document.getElementById(p[0]);if(el){el.dataset.spyGroup=p[1];spyIO.observe(el)}});
+  [['work','work'],['the-next-banker-2026','work'],['doi-tac-su-nghiep','work'],['leadership-summit','work'],['pnj-freelance','work'],['other-work','work'],['about','about'],['experience','experience']].forEach(function(p){var el=document.getElementById(p[0]);if(el){el.dataset.spyGroup=p[1];spyIO.observe(el)}});
   var hero=$('#top');var hio=new IntersectionObserver(function(es){if(es[0].isIntersecting)spyLinks.forEach(function(a){a.classList.remove('on')})},{rootMargin:'-45% 0px -50% 0px'});hio.observe(hero);
 }
 
@@ -1084,6 +1132,78 @@ $$('.filter').forEach(function(b){b.addEventListener('click',function(){
   projects.forEach(function(p){if(p.hidden)return;p.classList.remove('in');void p.offsetWidth;p.style.setProperty('--d',String(n%3));n++;requestAnimationFrame(function(){p.classList.add('in')})});
 })});
 
+/* ── Chống rớt chữ: giữ nguyên cụm từ, không ngắt giữa từ ghép ── */
+(function(g){
+var NB=' ';
+var VN='đồ họa sự kiện|đơn vị phát triển website|đơn vị phát triển|phát triển website|các mùa mua sắm|mùa mua sắm|cả nhóm|cùng nhóm|nhà in|thành phẩm|kiểm soát|ngọn hải đăng|giữa biển động|kiên định|tầm nhìn|dài hạn|người cầm lái|tp hồ chí minh|hồ chí minh|đại học văn hóa|phụ trách|kinh nghiệm|hệ thống|ấn phẩm|tuyển dụng|sự kiện|màn hình|bài đăng|tương tác|công cụ|kịch bản|ứng dụng|phân tích|thiết kế|nhận diện|chương trình|chiến dịch|hình ảnh|nội dung|truyền thông|dự án|đối tác|sự nghiệp|sân khấu|ưu đãi|trang sức|vai trò|vị trí|chủ đề|cách làm|phạm vi|thư mời|thẻ tên|ngân hàng|nội bộ|hạnh phúc|thông điệp|bài toán|dùng chung|giới thiệu|ứng tuyển|văn hóa|trải nghiệm|thương hiệu|không gian|ánh sáng|chuyến xe|phát triển|đăng ký|hướng đi|nghề nghiệp|toàn bộ|hải đăng|khối cầu|theo mùa|hành trình|quay chụp|triển khai|làm việc|công việc|chuyên môn|thực hiện|trưởng thành|bản sắc|câu chuyện|hình khối|bo tròn|thời gian|đại học|trường đại học|thông tin|quy trình|hỗ trợ|đào tạo|doanh nghiệp|lãnh đạo|cơ khí|vận hành|biểu diễn|âm nhạc|trân trọng|sẻ chia|phong bì|sinh viên|tuyển sinh|mạng xã hội|giao lưu|buổi giao lưu|màu sắc|ngày hội|việc làm|bàn giao|thành viên|trung tâm|thống nhất|biển động|nhận ra|kể bằng|nhắn cho|cả team|khách hàng|lên kịch bản|xuyên suốt|xuyên việt|tham gia|chia thành|bảng màu|bảng chỉ dẫn|chỉ dẫn|tìm hiểu|so sánh|giải pháp|cơ chế|trò chơi|kiểm tra|tự dựng|bên phát triển|đồ họa|nội dung truyền thông số|truyền thông số|năm cuối|năm đầu|hai mùa|mỗi mùa|trình bày|bên dưới|hiện tại|nhóm thiết kế|ngày lễ|văn phòng|thiết kế đồ họa|nhận diện tuyển dụng|truyền thông nội bộ|thu hút|nhân tài|đối với|con số|kết quả|hiệu quả|phản hồi|dự án khác|công việc khác|cùng team|cùng cả team|một số|một bộ|toàn bộ phần thiết kế|hình ngọn hải đăng|chi tiết|bài viết|trang tuyển dụng|trang chương trình|ảnh chụp|thực tế|đọc lướt|chữ đậm|chữ lớn|thẻ bo tròn|khối ngắn';
+var EN='key visual|landing page|career fair|job fair|case study|graphic designer|english time school|english time|galaxy group|event branding|employer branding|workplace branding|happy book|leadership summit|digital marketing|social design|event environment|style by pnj|style by|google ads|facebook ads|google ai studio|premiere pro|after effects|the next banker|grow as you are|how to be bold|operational mastery|save the date|design with purpose|ui layout|saigon co.op|acb jobs|ueh career fair|neu career fair|main stage|wayfinding|on-site|event & print|social & campus|recruitment website ui|campaign identity|seasonal campaign|social post|social content|email design|key visual identity|identity system';
+var FN='tôi|với|cho|của|các|một|những|từ|đến|hiện|đã|đang|sẽ|được|là|ở|tại|trên|trong|như|cùng|nhưng|khi|để|bằng|theo|mỗi|chỉ|cả|vào|ra|và|hay|mà|thì|có|không|rất|đều|cũng|vẫn|còn|nên|nếu|do|bởi|qua|sau|trước|giữa|về|bên|này|đó|hơn|nhiều';
+function mk(list){return list.split('|').map(function(s){return s.split(' ')}).sort(function(a,b){return b.length-a.length})}
+var C=mk(VN).concat(mk(EN)).sort(function(a,b){return b.length-a.length});
+var FNS={};FN.split('|').forEach(function(w){FNS[w]=1});
+function core(t){return t.toLowerCase().replace(/^[^\wÀ-ỹ]+|[^\wÀ-ỹ]+$/g,'')}
+function glue(str){
+  if(!str||str.indexOf(' ')<0)return str;
+  var tk=str.split(' '),units=[],i=0;
+  while(i<tk.length){
+    var took=0;
+    for(var c=0;c<C.length&&!took;c++){
+      var L=C[c].length;if(i+L>tk.length)continue;var ok=1;
+      for(var j=0;j<L;j++){if(core(tk[i+j])!==C[c][j]){ok=0;break}if(j<L-1&&/[,;:!?)]$/.test(tk[i+j])){ok=0;break}}
+      if(ok){units.push(tk.slice(i,i+L).join(NB));i+=L;took=1}
+    }
+    if(!took){units.push(tk[i]);i++}
+  }
+  // glue function words to following unit; separators to neighbours
+  var out=[];
+  for(i=0;i<units.length;i++){
+    var u=units[i],c0=core(u);
+    var sep=/^[·—–×&\/+]$/.test(u);
+    if(sep&&out.length&&i<units.length-1){out[out.length-1]+=NB+u;continue}
+    if(out.length&&/·$|—$|–$|×$|\/$/.test(out[out.length-1])&&!/\s$/.test(out[out.length-1])&&/ [·—–×\/]$/.test(out[out.length-1])){out[out.length-1]+=NB+u;continue}
+    if((FNS[c0]||u.length<=2)&&!/[,.;:!?]$/.test(u)&&i<units.length-1&&u.indexOf(NB)<0){
+      // pending glue: attach to next
+      units[i+1]=u+NB+units[i+1];continue;
+    }
+    out.push(u);
+  }
+  // keep last two units together
+  if(out.length>=2){var l=out.pop();out[out.length-1]+=NB+l}
+  return out.join(' ');
+}
+g.vnGlue=glue;
+})(typeof window!=='undefined'?window:globalThis);
+
+(function(){
+  $$('p,h1,h2,h3,h4,li,figcaption,.fact strong,.fact span,.pMeta dd,.pMeta dt,.job time,.stat>span:last-child,.callout strong,.cvWhen,.cvChips span,.pBot span,.label').forEach(function(el){
+    var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),n,nodes=[];
+    while(n=w.nextNode()){if(n.nodeValue.trim())nodes.push(n)}
+    nodes.forEach(function(t,i){
+      var v=t.nodeValue,lead=v.match(/^\s*/)[0],tail=v.match(/\s*$/)[0];
+      var core=v.trim();if(core.indexOf(' ')<0)return;
+      var g=vnGlue(core);
+      if(i<nodes.length-1){/* chỉ node cuối mới giữ 2 từ cuối */}
+      t.nodeValue=lead+g+tail;
+    });
+  });
+})();
+
+/* ── Leadership Summit tabs ── */
+(function(){
+  var tabs=$$('.edTabs button'),eds=$$('.edition');if(!tabs.length)return;
+  function setEd(id,scroll){
+    if(!document.getElementById(id)||eds.map(function(e){return e.id}).indexOf(id)<0)return false;
+    eds.forEach(function(e){e.classList.toggle('on',e.id===id)});
+    tabs.forEach(function(t){t.setAttribute('aria-selected',String(t.dataset.ed===id))});
+    $$('.edition.on [data-r],.edition.on .fig,.edition.on .heroCard').forEach(function(el){if(!el.classList.contains('in')){void el.offsetWidth;el.classList.add('in')}});
+    if(scroll)document.getElementById('leadership-summit').scrollIntoView({behavior:reduce?'auto':'smooth'});
+    return true;
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){setEd(t.dataset.ed,false)})});
+  function fromHash(){var h=location.hash.slice(1);if(h==='leadership-summit-2025'||h==='leadership-summit-2026'){setEd(h,false);var s=document.getElementById('leadership-summit');if(s)s.scrollIntoView()}}
+  window.addEventListener('hashchange',fromHash);fromHash();
+})();
+
 /* ── Dialogs ── */
 var details=[
  {title:'ACB — Employer & Event Branding',period:'12/2025 — Hiện tại',role:'Nhân viên Media — Event Branding',items:['Phát triển concept, key visual và hệ thống ấn phẩm nhận diện cho các chiến dịch Employer Branding, tuyển dụng và sự kiện thu hút nhân tài.','Triển khai hình ảnh trên ACB Jobs, LinkedIn, Facebook và POSM sự kiện.']},
@@ -1100,7 +1220,6 @@ $$('[data-project]').forEach(function(b){b.addEventListener('click',function(){
   pd.showModal();
 })});
 var cv=$('#cvDialog');
-$('#cvJobs').innerHTML=$('.timeline').innerHTML;$$('#cvJobs [data-r]').forEach(function(e){e.removeAttribute('data-r');e.removeAttribute('style')});
 ['openCV','openCV2'].forEach(function(id){document.getElementById(id).addEventListener('click',function(){cv.showModal()})});
 $('#printCV').addEventListener('click',function(){window.print()});
 $$('dialog').forEach(function(d){
@@ -1117,10 +1236,12 @@ function getCap(f){var c=f.querySelector('figcaption.cap');return c?c.textConten
 function show(i){
   idx=(i+items.length)%items.length;var f=items[idx],im=f.querySelector('img');
   lbImg.style.animation='none';void lbImg.offsetWidth;lbImg.style.animation='';
+  var st=lbImg.parentNode,tall=(+im.getAttribute('height')||0)/(+im.getAttribute('width')||1)>1.2&&(+im.getAttribute('width')||0)>=800;
+  st.classList.toggle('tall',tall);st.scrollTop=0;
   lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lbCap.textContent=getCap(f);lbCount.textContent=(idx+1)+' / '+items.length;
 }
 function openLB(f,sec){
-  items=$$('.fig, .heroCard',sec).filter(function(x){return x.querySelector('img')&&!x.classList.contains('dup')});idx=items.indexOf(f);if(idx<0){var sr=f.querySelector('img').getAttribute('src');idx=0;items.forEach(function(x,k){if(x.querySelector('img').getAttribute('src')===sr)idx=k})}
+  items=$$('.fig, .heroCard',sec).filter(function(x){return x.querySelector('img')&&!x.classList.contains('dup')&&x.offsetParent!==null});idx=items.indexOf(f);if(idx<0){var sr=f.querySelector('img').getAttribute('src');idx=0;items.forEach(function(x,k){if(x.querySelector('img').getAttribute('src')===sr)idx=k})}
   lastFocus=document.activeElement;lbOpen=true;lb.classList.add('open');lb.setAttribute('aria-hidden','false');lockScroll(true);show(idx);$('#lbClose').focus();
   var single=items.length<2;$('#lbPrev').style.display=$('#lbNext').style.display=single?'none':'';
 }
