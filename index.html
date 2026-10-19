@@ -311,6 +311,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset
 footer{padding:26px 0;font-size:12px;color:rgba(10,18,3,.7);background:var(--acc);border-top:1px solid rgba(10,18,3,.15)}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a:hover{text-decoration:underline}
+footer .vc{display:flex;align-items:center;gap:14px;font-variant-numeric:tabular-nums}footer .vi{display:inline-flex;align-items:center;gap:6px}footer .vi b{font-weight:600;color:#0a1203}footer .vi i{width:7px;height:7px;border-radius:50%;background:#0a1203;display:inline-block}@media print{footer .vc{display:none}}
+
 
 /* ───────── Dialogs + lightbox ───────── */
 dialog{width:min(760px,calc(100% - 32px));max-height:88vh;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:26px;padding:clamp(24px,4vw,44px);line-height:1.8;overflow:auto;overscroll-behavior:contain}
@@ -976,7 +978,7 @@ h1,h2,h3,h4{text-wrap:balance}p,li,figcaption,.fact strong,.job p{text-wrap:pret
   </div>
 </section>
 </main>
-<footer><div class="wrap"><span>© 2026 Lý Huỳnh Long · Personal Portfolio</span><a href="#top">TP. Hồ Chí Minh · Về đầu trang ↑</a></div></footer>
+<footer><div class="wrap"><span>© 2026 Lý Huỳnh Long · Personal Portfolio</span><div class="vc" id="vc" aria-label="Lượt xem" hidden><span class="vi" title="Tổng lượt xem"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg><b id="vcTotal">0</b></span><span class="vi" title="Hôm nay"><i aria-hidden="true"></i><b id="vcToday">0</b></span></div><a href="#top">TP. Hồ Chí Minh · Về đầu trang ↑</a></div></footer>
 
 <!-- Dialogs -->
 <dialog id="projectDialog" aria-labelledby="projectTitle" data-lenis-prevent><div class="dHead"><p class="label">Phạm vi công việc</p><button class="close" type="button" aria-label="Đóng thông tin">×</button></div><h2 id="projectTitle"></h2><div id="projectBody"></div></dialog>
@@ -1262,6 +1264,25 @@ $('#lbClose').addEventListener('click',closeLB);$('#lbPrev').addEventListener('c
 lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lbStage'))closeLB()});
 document.addEventListener('keydown',function(e){if(!lbOpen)return;if(e.key==='Escape')closeLB();else if(e.key==='ArrowLeft')show(idx-1);else if(e.key==='ArrowRight')show(idx+1)});
 var tx=0;lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>60)show(idx+(d<0?1:-1))});
+})();
+</script>
+<script>
+(function(){
+var NS='renows-github-io-portfolio',B='https://abacus.jasoncameron.dev/',box=document.getElementById('vc');
+if(!box||!/^https?:$/.test(location.protocol))return;
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+if(/[?&]owner\b/.test(location.search)){ls('vcOwner','1')}
+var owner=ls('vcOwner')==='1';
+var today;try{today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh'}).format(new Date())}catch(e){today=new Date().toISOString().slice(0,10)}
+var dayKey='d-'+today,first=!owner&&ls('vcDay')!==today;
+function call(ep,key){return fetch(B+ep+'/'+NS+'/'+key).then(function(r){return r.ok?r.json():{value:0}}).then(function(j){return j.value||0}).catch(function(){return null})}
+function put(id,v){if(v===null)return false;document.getElementById(id).textContent=v.toLocaleString('vi-VN');return true}
+var ep=first?'hit':'get';
+Promise.all([call(ep,'total'),call(ep,dayKey)]).then(function(r){
+ if(first&&(r[0]!==null||r[1]!==null))ls('vcDay',today);
+ var a=put('vcTotal',r[0]),b=put('vcToday',r[1]);
+ if(a||b)box.hidden=false;
+});
 })();
 </script>
 </body>
